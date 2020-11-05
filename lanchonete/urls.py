@@ -8,5 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', RedirectView.as_view(url='/home/')),
-    path('home/', template.home),
+    path('home/', template.home, name='home_view'),
 ]
