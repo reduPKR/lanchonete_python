@@ -4,7 +4,12 @@
         {% include 'model-header.html' %}
     </head>
     <body>
-       {% block content %}
-       {% endblock %}
+        <div align="center">
+            <br>
+            <h2>{{header}}</h2>
+               {% block content %}
+               {% endblock %}
+            <br>
+        </div>
     </body>
 </html>
