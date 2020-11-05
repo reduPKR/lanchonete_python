@@ -1,12 +1,12 @@
-##Lanchonete Django
+## Lanchonete Django
 Estava sem muito o que fazer, decidi criar um sistema para uma lanchonete.  
 O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anotar pedidos.  
 
-##Rotas
-####Rota para paginas
-####Rotas para Rest  
+## Rotas
+#### Rota para paginas
+#### Rotas para Rest  
 
-##Tarefas  
+## Tarefas  
 -[ ] Criar modelos do banco de dados.  
 -[ ] Tela para listar ingredientes  
 -[ ] Tela para filtrar ingredientes  
@@ -24,5 +24,5 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 -[ ] Atualizar um pedido  
 -[ ] Finalizar um pedido   
 
-##Telas  
+## Telas  
  
