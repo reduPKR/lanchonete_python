@@ -4,7 +4,11 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 
 ## Rotas
 #### Rota para paginas
+**URL dashboard:** 127.0.0.1/admin  
+
 #### Rotas para Rest  
+**URL home-page:**  127.0.0.1/home  
+
 
 ## Tarefas  
 - [X] Criar header e page models  
@@ -37,6 +41,4 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 - [ ] Realizar um pedido  
 - [ ] Atualizar um pedido  
 - [ ] Finalizar um pedido   
-
-## Telas  
  
