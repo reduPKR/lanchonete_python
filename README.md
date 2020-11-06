@@ -9,7 +9,8 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 ## Tarefas  
 - [X] Criar header e page models  
 - [X] Criar testes para template  
-- [ ] Adicionar o Bootstrap  
+- [X] Adicionar o Bootstrap  
+- [X] Adicionar o Fontawesome 
 - [ ] Criar modelos do banco de dados.  
 - [ ] Testes templates  
 - [ ] Testes para models 
