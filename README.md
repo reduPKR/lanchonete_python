@@ -15,7 +15,7 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 - [X] Criar testes para template  
 - [X] Adicionar o Bootstrap  
 - [X] Adicionar o Fontawesome 
-- [ ] Criar modelos do banco de dados.  
+- [X] Criar modelos do banco de dados.  
 - [ ] Testes templates  
 - [ ] Testes para models 
 - [ ] Tela para listar ingredientes  
@@ -40,5 +40,9 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 - [ ] Testes para models 
 - [ ] Realizar um pedido  
 - [ ] Atualizar um pedido  
-- [ ] Finalizar um pedido   
+- [ ] Finalizar um pedido     
+
+##Banco de dados  
+
+![image](https://user-images.githubusercontent.com/56879793/98428575-ec762300-2080-11eb-87cc-74fd8de9081f.png)
  
