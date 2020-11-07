@@ -42,7 +42,7 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 - [ ] Atualizar um pedido  
 - [ ] Finalizar um pedido     
 
-##Banco de dados  
+## Banco de dados  
 
 ![image](https://user-images.githubusercontent.com/56879793/98428575-ec762300-2080-11eb-87cc-74fd8de9081f.png)
  
