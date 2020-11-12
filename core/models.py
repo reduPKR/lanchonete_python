@@ -82,3 +82,18 @@ class OrderedIngredients(models.Model):
 
     class Meta:
         db_table = 'ordered_ingredients'
+
+class Status(models.Model):
+    name = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'status'
+
+class SandwichStatus(models.Model):
+    sandwich_order = models.ForeignKey(SandwichOrder, on_delete=models.CASCADE)
+    status = models.ForeignKey(Status, on_delete=models.CASCADE)
+    date = models.DateField()
+
+    class Meta:
+        db_table = 'sandwich_status'
+
