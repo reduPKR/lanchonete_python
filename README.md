@@ -5,9 +5,12 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 ## Rotas
 #### Rota para paginas
 **URL dashboard:** 127.0.0.1/admin  
+**URL home-page:**  127.0.0.1/home 
+**URL menu de ingredientes:** 127.0.0.1/ingredient/menu
+**URL adição de ingredientes:**  127.0.0.1/ingredient/create
+
 
 #### Rotas para Rest  
-**URL home-page:**  127.0.0.1/home  
 
 
 ## Tarefas  

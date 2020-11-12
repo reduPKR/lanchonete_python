@@ -12,4 +12,5 @@ urlpatterns = [
     path('home/', template.home, name='home_view'),
 
     path('ingredient/menu/', ingredient.menu, name='menu_ingredient_view'),
+    path('ingredient/create/', ingredient.create, name='create_ingredient_view'),
 ]
