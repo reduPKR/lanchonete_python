@@ -1,6 +1,6 @@
 from django.db import models
 
-class Ingredients(models.Model):
+class Ingredient(models.Model):
     name = models.CharField(max_length=50)
 
     class Meta:
@@ -10,7 +10,7 @@ class IngredientValue(models.Model):
     value = models.DecimalField(max_digits=5, decimal_places=2, localize=True)
     date = models.DateField()
 
-    ingredient = models.ForeignKey(Ingredients, on_delete=models.CASCADE)
+    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'ingredients_value'
@@ -30,3 +30,9 @@ class SandwichValue(models.Model):
     class Meta:
         db_table = 'sandwich_value'
 
+class SandwichIngredient(models.Model):
+    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
+    sandwich = models.ForeignKey(Sandwich, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'sandwich_ingredient'
