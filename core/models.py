@@ -62,9 +62,23 @@ class Purchase(models.Model):
     class Meta:
         db_table = 'purchase'
 
-class BeveragePurchase(models.Model):
+class BeverageOrder(models.Model):
     beverage = models.ForeignKey(Beverage, on_delete=models.CASCADE)
     purchase = models.ForeignKey(Purchase, on_delete=models.CASCADE)
 
     class Meta:
-        db_table = 'beverage_purchase'
+        db_table = 'beverage_order'
+
+class SandwichOrder(models.Model):
+    sandwich = models.ForeignKey(Sandwich, on_delete=models.CASCADE)
+    purchase = models.ForeignKey(Purchase, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'sandwich_order'
+
+class OrderedIngredients(models.Model):
+    sandwich_order = models.ForeignKey(SandwichOrder, on_delete=models.CASCADE)
+    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'ordered_ingredients'
