@@ -19,27 +19,30 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 - [X] Adicionar o Bootstrap  
 - [X] Adicionar o Fontawesome 
 - [X] Criar modelos do banco de dados.  
-- [ ] Testes templates  ingredientes
-- [ ] Testes para models ingredientes
-- [ ] Menu de ingredientes  
+- [ ] Testes templates  ingredientes  
+- [ ] Testes para models ingredientes  
+- [X] Menu de ingredientes  
 - [ ] Tela para listar ingredientes  
 - [ ] Tela para filtrar ingredientes  
-- [ ] Tela para cadastrar/atualizar ingredientes 
-- [ ] Testes templates  lanches
-- [ ] Testes para models lanches
-- [ ] Menu de lanches
+- [X] Tela para cadastrar ingredientes  
+- [ ] Tela para atualizar ingredientes 
+- [ ] Testes templates  lanches  
+- [ ] Testes para models lanches  
+- [ ] Menu de lanches  
 - [ ] Tela para listar lanches  
 - [ ] Tela para filtrar lanches  
-- [ ] Tela para cadastrar/atualizar lanches  
-- [ ] Testes templates  bebidas
-- [ ] Testes para models bebidas
-- [ ] Menu de bebidas
+- [ ] Tela para cadastrar lanches  
+- [ ] Tela para atualizar lanches  
+- [ ] Testes templates  bebidas  
+- [ ] Testes para models bebidas  
+- [ ] Menu de bebidas  
 - [ ] Tela para listar bebidas  
 - [ ] Tela para filtrar bebidas  
-- [ ] Tela para cadastrar/atualizar bebidas  
-- [ ] Testes templates  pedido
-- [ ] Testes para models pedido
-- [ ] Menu de pedido
+- [ ] Tela para cadastrar  
+- [ ] Tela para atualizar bebidas  
+- [ ] Testes templates  pedido  
+- [ ] Testes para models pedido  
+- [ ] Menu de pedido  
 - [ ] Realizar um pedido  
 - [ ] Atualizar um pedido  
 - [ ] Finalizar um pedido     
