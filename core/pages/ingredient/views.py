@@ -4,6 +4,6 @@ def menu(request):
     dados = {
         'title': 'Menu de ingredientes',
         'header': 'Menu de ingredientes',
-        'icon': 'fas fa-store'
+        'icon': 'fas fa-bacon'
     }
     return render(request, 'ingredient/menu.html', dados)
