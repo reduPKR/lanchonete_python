@@ -92,7 +92,7 @@ class Status(models.Model):
 class SandwichStatus(models.Model):
     sandwich_order = models.ForeignKey(SandwichOrder, on_delete=models.CASCADE)
     status = models.ForeignKey(Status, on_delete=models.CASCADE)
-    date = models.DateField()
+    update_time = models.DateTimeField()
 
     class Meta:
         db_table = 'sandwich_status'
