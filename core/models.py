@@ -53,5 +53,18 @@ class BeverageValue(models.Model):
     class Meta:
         db_table = 'beverage_value'
 
+class Purchase(models.Model):
+    code = models.IntegerField()
+    date = models.DateField()
 
+    open = models.BooleanField(default=True)
 
+    class Meta:
+        db_table = 'purchase'
+
+class BeveragePurchase(models.Model):
+    beverage = models.ForeignKey(Beverage, on_delete=models.CASCADE)
+    purchase = models.ForeignKey(Purchase, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'beverage_purchase'
