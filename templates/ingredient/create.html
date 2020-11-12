@@ -1,4 +1,26 @@
 {% extends "model-page.html" %}
 
 {% block content %}
+    {% for message in messages %}
+        <span style="color: orange;">* Erro: {{ message }}</span><br>
+    {% endfor %}
+    <form action="submit" method="POST"> {% csrf_token %}
+        {% if ingredient == None%}
+            <label>Ingrediente: </label>
+            <input type="text" name="name" maxlength="50" size="50" placeholder="Nome">
+        {% else %}
+            <input name="id" value="{{ingredient.id}}" hidden>
+            <label>Ingrediente: </label>
+            <input type="text" name="name" value="{{ingredient.name}}" maxlength="50" size="50">
+        {% endif %}
+        <br><br>
+        <button class="btn btn-secondary btn-lg btn-block" type="submit">
+            {% if ingredient == None %}
+                <i class="fas fa-plus"></i> Cadastrar
+            {% else %}
+                <i class="fas fa-edit"></i> Atualizar
+            {% endif %}
+        </button>
+    </form>
+
 {% endblock %}
