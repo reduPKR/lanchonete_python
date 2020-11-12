@@ -32,10 +32,7 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 - [ ] Tela para filtrar bebidas  
 - [ ] Tela para cadastrar/atualizar bebidas  
 - [ ] Testes templates  
-- [ ] Testes para models 
-- [ ] Tela para listar mesa  
-- [ ] Tela para filtrar mesa  
-- [ ] Tela para cadastrar/atualizar mesa  
+- [ ] Testes para models  
 - [ ] Testes templates  
 - [ ] Testes para models 
 - [ ] Realizar um pedido  
