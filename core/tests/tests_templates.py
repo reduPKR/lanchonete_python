@@ -18,6 +18,14 @@ class TemplatesViewTests(TestCase):
         response = self.client.get(reverse("menu_ingredient_view"))
         self.assertEqual(response.status_code, 200)
 
-    def test_menu_ingredient_(self):
+    def test_menu_ingredient(self):
         response = self.client.get(reverse("menu_ingredient_view"))
         self.assertTemplateUsed(response, "ingredient/menu.html")
+
+    def test_create_ingredient_status_ok(self):
+        response = self.client.get(reverse("create_ingredient_view"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_create_ingredient(self):
+        response = self.client.get(reverse("create_ingredient_view"))
+        self.assertTemplateUsed(response, "ingredient/create.html")
