@@ -7,7 +7,7 @@ class Ingredient(models.Model):
         db_table = 'ingredient'
 
 class IngredientValue(models.Model):
-    value = models.DecimalField(max_digits=5, decimal_places=2, localize=True)
+    value = models.DecimalField(max_digits=5, decimal_places=2)
     date = models.DateField()
 
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
@@ -22,7 +22,7 @@ class Sandwich(models.Model):
         db_table = 'sandwich'
 
 class SandwichValue(models.Model):
-    value = models.DecimalField(max_digits=5, decimal_places=2, localize=True)
+    value = models.DecimalField(max_digits=5, decimal_places=2)
     date = models.DateField()
 
     sandwich = models.ForeignKey(Sandwich, on_delete=models.CASCADE)
@@ -45,7 +45,7 @@ class Beverage(models.Model):
         db_table = 'beverage'
 
 class BeverageValue(models.Model):
-    value = models.DecimalField(max_digits=5, decimal_places=2, localize=True)
+    value = models.DecimalField(max_digits=5, decimal_places=2)
     date = models.DateField()
 
     beverage = models.ForeignKey(Beverage, on_delete=models.CASCADE)
