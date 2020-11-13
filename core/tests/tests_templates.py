@@ -29,3 +29,11 @@ class TemplatesViewTests(TestCase):
     def test_create_ingredient(self):
         response = self.client.get(reverse("create_ingredient_view"))
         self.assertTemplateUsed(response, "ingredient/create.html")
+
+    def test_list_ingredient_status_ok(self):
+        response = self.client.get(reverse("list_ingredient_view"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_list_ingredient(self):
+        response = self.client.get(reverse("list_ingredient_view"))
+        self.assertTemplateUsed(response, "ingredient/list.html")

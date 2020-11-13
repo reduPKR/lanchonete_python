@@ -35,4 +35,4 @@ def create_submit(request):
     else:
         messages.error(request, 'Erro durante envio')
 
-    return redirect('/ingredient/create')
+    return redirect('/ingredient/menu')
