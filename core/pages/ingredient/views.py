@@ -90,7 +90,7 @@ def edit(request, id):
             'title': 'Atualizar ingrediente',
             'header': 'Atualizar ingrediente',
             'icon': 'fas fa-bacon',
-            'ingredient': Ingredient.get_by_id(id)
+            'ingredient': Ingredient.get_info_by_id(id)
         }
 
         return render(request, 'ingredient/create.html', dados)

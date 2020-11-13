@@ -59,3 +59,12 @@ def set_value(ingredient, price):
         )
     except:
         return None
+
+
+def get_info_by_id(id):
+    try:
+        ingredient = get_by_id(id)
+        ingredient.value = get_value(ingredient)
+        return ingredient
+    except:
+        return None
