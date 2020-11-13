@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-import core.dao as dao
+import core.dao.Ingredient as Ingredient
 
 def menu(request):
     dados = {
@@ -24,10 +24,10 @@ def create_submit(request):
     if request.POST:
         name = request.POST.get("name")
         if name:
-            ingredient = dao.Ingredient.get_by_name(name)
+            ingredient = Ingredient.get_by_name(name)
 
             if ingredient is None:
-                pass
+                Ingredient.create(name)
             else:
                 messages.error(request, 'Ingrediente com mesmo nome ja cadastrado')
         else:
