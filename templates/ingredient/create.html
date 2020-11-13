@@ -6,12 +6,34 @@
     {% endfor %}
     <form action="submit" method="POST"> {% csrf_token %}
         {% if ingredient == None%}
-            <label>Ingrediente: </label>
-            <input type="text" name="name" maxlength="50" size="50" placeholder="Nome">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Nome: </label>
+                    <input type="text" name="name" maxlength="50" placeholder="Nome">
+                </div>
+            </div>
+             <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Preço: </label>
+                    <input  type="number" step="0.01" min="0.01" value="10.00" name="price">
+                </div>
+            </div>
         {% else %}
             <input name="id" value="{{ingredient.id}}" hidden>
-            <label>Ingrediente: </label>
-            <input type="text" name="name" value="{{ingredient.name}}" maxlength="50" size="50">
+
+
+             <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Nome: </label>
+                    <input type="text" name="name" value="{{ingredient.name}}" maxlength="50">
+                </div>
+            </div>
+             <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Preço: </label>
+                    <input  type="number" step="0.01" min="0.01" value="{{ingredient.price}}" name="price">
+                </div>
+            </div>
         {% endif %}
         <br><br>
         <button class="btn btn-warning btn-lg btn-block" type="submit">

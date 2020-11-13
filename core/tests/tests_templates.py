@@ -46,3 +46,4 @@ class TemplatesViewTests(TestCase):
     def test_filter_ingredient(self):
         response = self.client.get(reverse("filter_ingredient_view"))
         self.assertTemplateUsed(response, "ingredient/filter.html")
+
