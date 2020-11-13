@@ -15,7 +15,8 @@ def create(request):
     dados = {
         'title': 'Cadastrar novo ingrediente',
         'header': 'Cadastrar novo ingrediente',
-        'icon': 'fas fa-bacon'
+        'icon': 'fas fa-bacon',
+        'ingredient': None
     }
     return render(request, 'ingredient/create.html', dados)
 
@@ -74,3 +75,17 @@ def filter_submit(request):
         messages.error(request, 'Erro durante a solicitação')
 
     return redirect('/ingredient/filter')
+
+def edit(request, id):
+    if id:
+        dados = {
+            'title': 'Atualizar ingrediente',
+            'header': 'Atualizar ingrediente',
+            'icon': 'fas fa-bacon',
+            'ingredient': Ingredient.get_by_id(id)
+        }
+
+        return render(request, 'ingredient/create.html', dados)
+    else:
+        messages.error(request, "Erro no envio")
+

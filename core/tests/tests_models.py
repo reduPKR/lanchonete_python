@@ -22,3 +22,7 @@ class ModelsTests(TestCase):
     def test_filter_ingredient(self):
         ingredients = db.Ingredient.filter('Pã')
         self.assertNotEqual(len(ingredients),0)
+
+    def test_get_ingredient_by_name(self):
+        ingredient = db.Ingredient.get_by_id(1)
+        self.assertEqual(ingredient.name, "Pão")
