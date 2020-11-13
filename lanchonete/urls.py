@@ -20,5 +20,5 @@ urlpatterns = [
     path('ingredient/edit/<int:id>', ingredient.edit),
     path('ingredient/edit/submit', ingredient.edit_submit),
 
-
+    #path('sandwish/menu/', sandwish.menu, name='menu_sandwish_view'),
 ]

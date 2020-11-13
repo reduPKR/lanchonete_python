@@ -22,7 +22,7 @@ class Sandwich(models.Model):
         db_table = 'sandwich'
 
 class SandwichValue(models.Model):
-    value = models.DecimalField(max_digits=5, decimal_places=2)
+    percent = models.FloatField(default=5)
     date = models.DateField()
 
     sandwich = models.ForeignKey(Sandwich, on_delete=models.CASCADE)
