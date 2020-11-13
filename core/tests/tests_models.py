@@ -34,5 +34,5 @@ class ModelsTests(TestCase):
 
     def test_set_value_ingredient(self):
         ingredient = db.Ingredient.get_by_id(1)
-        value = db.Ingredient.set_value(ingredient, 1.50)
-        self.assertEqual(value, 1.50)
+        ingredient_value = db.Ingredient.set_value(ingredient, 1.50)
+        self.assertEqual(ingredient_value.value, 1.5)

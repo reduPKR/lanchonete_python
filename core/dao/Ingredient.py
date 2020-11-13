@@ -1,4 +1,5 @@
 from core import models
+import datetime
 
 def create(name):
     try:
@@ -45,5 +46,16 @@ def get_by_id(id):
 def update(id, name):
     try:
         return models.Ingredient.objects.filter(id=id).update(name=name)
+    except:
+        return None
+
+
+def set_value(ingredient, price):
+    try:
+        return models.IngredientValue.objects.create(
+            ingredient=ingredient,
+            value=price,
+            date=datetime.date.today()
+        )
     except:
         return None

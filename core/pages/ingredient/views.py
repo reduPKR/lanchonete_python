@@ -42,6 +42,7 @@ def create_submit(request):
 
 def create_execute(name, price):
     ingredient = Ingredient.create(name)
+    Ingredient.set_value(ingredient, price)
 
 
 def list(request):
