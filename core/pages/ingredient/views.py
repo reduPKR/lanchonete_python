@@ -43,7 +43,7 @@ def list(request):
         'title': 'Lista de ingredientes',
         'header': 'Lista de ingredientes',
         'icon': 'fas fa-bacon',
-        'ingredients': []
+        'ingredients': Ingredient.get_all()
     }
 
     return render(request, 'ingredient/list.html', dados)

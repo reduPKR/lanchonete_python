@@ -17,3 +17,8 @@ def get_by_name(name):
     except:
         return None
 
+def get_all():
+    try:
+        return models.Ingredient.objects.all().order_by('name')
+    except:
+        return None
