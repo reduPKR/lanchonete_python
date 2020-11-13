@@ -36,3 +36,13 @@ def create_submit(request):
         messages.error(request, 'Erro durante envio')
 
     return redirect('/ingredient/menu')
+
+
+def list(request):
+    dados = {
+        'title': 'Lista de ingredientes',
+        'header': 'Lista de ingredientes',
+        'icon': 'fas fa-bacon'
+    }
+
+    return render(request, 'ingredient/list.html', dados)

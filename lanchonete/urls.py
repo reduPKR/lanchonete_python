@@ -13,5 +13,6 @@ urlpatterns = [
 
     path('ingredient/menu/', ingredient.menu, name='menu_ingredient_view'),
     path('ingredient/create/', ingredient.create, name='create_ingredient_view'),
-    path('ingredient/create/submit', ingredient.create_submit)
+    path('ingredient/create/submit', ingredient.create_submit),
+    path('ingredient/list', ingredient.list),
 ]
