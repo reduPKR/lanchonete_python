@@ -47,3 +47,13 @@ def list(request):
     }
 
     return render(request, 'ingredient/list.html', dados)
+
+
+def filter(request):
+    dados = {
+        'title': 'Filtragem de ingredientes',
+        'header': 'Filtragem de ingredientes',
+        'icon': 'fas fa-bacon'
+    }
+
+    return render(request, 'ingredient/filter.html', dados)

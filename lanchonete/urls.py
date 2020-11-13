@@ -14,5 +14,6 @@ urlpatterns = [
     path('ingredient/menu/', ingredient.menu, name='menu_ingredient_view'),
     path('ingredient/create/', ingredient.create, name='create_ingredient_view'),
     path('ingredient/create/submit', ingredient.create_submit),
-    path('ingredient/list', ingredient.list, name='list_ingredient_view'),
+    path('ingredient/list/', ingredient.list, name='list_ingredient_view'),
+    path('ingredient/filter/', ingredient.filter, name='filter_ingredient_view'),
 ]
