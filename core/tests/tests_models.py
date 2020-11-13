@@ -4,7 +4,7 @@ import core.dao as db
 class ModelsTests(TestCase):
     def setUp(self):
         ingredient = db.Ingredient.create("Pão")
-        db.Ingredient.set_value(ingredient, 1)
+        db.Ingredient.set_value(ingredient, 1.25)
         ingredient = db.Ingredient.create("Hamburger")
         db.Ingredient.set_value(ingredient, 1)
 
@@ -47,9 +47,9 @@ class ModelsTests(TestCase):
     def test_get_value_by_ingredient(self):
         ingredient = db.Ingredient.get_info_by_id(1)
         ingredient = db.Ingredient.get_value(ingredient)
-        self.assertEqual(ingredient.value, 1)
+        self.assertEqual(ingredient.value, 1.25)
 
     def test_get_value_ingredient(self):
         ingredient = db.Ingredient.get_info_by_id(1)
-        self.assertEqual(ingredient.value, 1)
+        self.assertEqual(ingredient.price.value, 1.25)
 
