@@ -11,7 +11,7 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 
 
 #### Rotas para Rest  
-
+**URL adição de ingredientes:**  127.0.0.1/ingredient/create/submit
 
 ## Tarefas  
 - [X] Criar header e page models  
