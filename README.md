@@ -9,10 +9,11 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 **URL menu de ingredientes:** 127.0.0.1/ingredient/menu  
 **URL adição de ingredientes:**  127.0.0.1/ingredient/create  
 **URL listagem de ingredientes:**  127.0.0.1/ingredient/list  
-
+**URL filtragem de ingredientes:**  127.0.0.1/ingredient/filter
 
 #### Rotas para Rest  
 **URL adição de ingredientes:**  127.0.0.1/ingredient/create/submit
+**URL filtragem de ingredientes:**  127.0.0.1/ingredient/filter/submit
 
 ## Tarefas  
 - [X] Criar header e page models  
@@ -24,7 +25,7 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 - [ ] Testes para models ingredientes  
 - [X] Menu de ingredientes  
 - [X] Tela para listar ingredientes  
-- [ ] Tela para filtrar ingredientes  
+- [X] Tela para filtrar ingredientes  
 - [X] Tela para cadastrar ingredientes  
 - [ ] Tela para atualizar ingredientes 
 - [ ] Testes templates  lanches  
