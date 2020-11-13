@@ -30,3 +30,8 @@ class ModelsTests(TestCase):
     def test_get_ingredient_update(self):
         ingredient = db.Ingredient.update(2, "Bacon")
         self.assertEqual(ingredient.name, "Bacon")
+
+    def test_set_value_ingredient(self):
+        ingredient = db.Ingredient.get_by_id(1)
+        value = db.Ingredient.set_value(ingredient, 1.50)
+        self.assertEqual(value, 1.50)
