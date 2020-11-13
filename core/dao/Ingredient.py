@@ -45,7 +45,11 @@ def get_by_id(id):
 
 def update(id, name, price):
     update_name(id, name)
-    update_price(id, price)
+
+    ingredient = models.Ingredient.objects.filter(id=id).first()
+    value = models.IngredientValue.objects.filter(ingredient=ingredient).last()
+    update_price(value.id, price)
+
 
 def update_name(id, name):
     try:
@@ -72,7 +76,7 @@ def set_value(ingredient, price):
 
 def get_value(ingredient):
     try:
-        return models.IngredientValue.objects.get(ingredient=ingredient)
+        return models.IngredientValue.objects.filter(ingredient=ingredient).last()
     except:
         return None
 

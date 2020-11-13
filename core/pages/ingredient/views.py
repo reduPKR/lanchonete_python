@@ -106,7 +106,7 @@ def edit_submit(request):
         if id:
             if name:
                 if price:
-                    edit_execute(name, price)
+                    edit_execute(id, name, price)
                 else:
                     messages.error(request, "Preço não pode estar em branco")
             else:
@@ -118,5 +118,5 @@ def edit_submit(request):
 
     return redirect('/ingredient/list')
 
-def edit_execute(name, price):
+def edit_execute(id, name, price):
     Ingredient.update(id, name, price)
