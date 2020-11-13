@@ -23,19 +23,27 @@ def create(request):
 def create_submit(request):
     if request.POST:
         name = request.POST.get("name")
+        price = request.POST.get("price")
         if name:
-            ingredient = Ingredient.get_by_name(name)
-
-            if ingredient is None:
-                Ingredient.create(name)
+            if price:
+                ingredient = Ingredient.get_by_name(name)
+                if ingredient is None:
+                    create_execute(name, price)
+                else:
+                    messages.error(request, 'Ingrediente com mesmo nome ja cadastrado')
             else:
-                messages.error(request, 'Ingrediente com mesmo nome ja cadastrado')
+                messages.error(request, 'Preço não pode estar em branco')
         else:
             messages.error(request, 'Nome não pode estar em branco')
     else:
         messages.error(request, 'Erro durante envio')
 
     return redirect('/ingredient/menu')
+
+def create_execute(name, price):
+    ingredient = Ingredient.create(name)
+    
+
 
 def list(request):
     return return_list(request, Ingredient.get_all())
