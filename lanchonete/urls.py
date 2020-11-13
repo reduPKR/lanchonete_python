@@ -4,6 +4,7 @@ from django.views.generic import RedirectView
 
 from core.pages.templates import views as template
 from core.pages.ingredient import views as ingredient
+from core.pages.sandwish import views as sandwish
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -20,5 +21,5 @@ urlpatterns = [
     path('ingredient/edit/<int:id>', ingredient.edit),
     path('ingredient/edit/submit', ingredient.edit_submit),
 
-    #path('sandwish/menu/', sandwish.menu, name='menu_sandwish_view'),
+    path('sandwish/menu/', sandwish.menu, name='menu_sandwish_view'),
 ]
