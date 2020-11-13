@@ -22,3 +22,12 @@ def get_all():
         return models.Ingredient.objects.all().order_by('name')
     except:
         return None
+
+
+def filter(name):
+    try:
+        return models.Ingredient.objects.filter(
+            name__contains=name
+        ).order_by('name')
+    except:
+        return []

@@ -1,7 +1,10 @@
 {% extends 'model-page.html' %}
 
 {% block content %}
-    <form action="submit" method="POST"> {% csrf_token %}
+    {% for message in messages %}
+        <span>* Erro: {{ message }}</span><br>
+    {% endfor %}
+    <form action="submit" method="GET"> {% csrf_token %}
         <label>Ingrediente: </label>
         <input type="text" name="name" maxlength="50" size="50" placeholder="Nome">
         <br><br>

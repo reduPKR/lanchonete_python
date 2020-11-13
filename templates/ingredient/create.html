@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for message in messages %}
-        <span style="color: orange;">* Erro: {{ message }}</span><br>
+        <span>* Erro: {{ message }}</span><br>
     {% endfor %}
     <form action="submit" method="POST"> {% csrf_token %}
         {% if ingredient == None%}

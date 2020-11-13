@@ -19,7 +19,6 @@ def create(request):
     }
     return render(request, 'ingredient/create.html', dados)
 
-
 def create_submit(request):
     if request.POST:
         name = request.POST.get("name")
@@ -37,17 +36,18 @@ def create_submit(request):
 
     return redirect('/ingredient/menu')
 
-
 def list(request):
+    return return_list(request, Ingredient.get_all())
+
+def return_list(request, list):
     dados = {
         'title': 'Lista de ingredientes',
         'header': 'Lista de ingredientes',
         'icon': 'fas fa-bacon',
-        'ingredients': Ingredient.get_all()
+        'ingredients': list
     }
 
     return render(request, 'ingredient/list.html', dados)
-
 
 def filter(request):
     dados = {
@@ -57,3 +57,20 @@ def filter(request):
     }
 
     return render(request, 'ingredient/filter.html', dados)
+
+def filter_submit(request):
+    if request.GET:
+        name = request.GET.get("name")
+        if name:
+            ingredients = Ingredient.filter(name)
+
+            if len(ingredients) > 0:
+                return return_list(request, ingredients)
+            else:
+                messages.error(request, 'Ingrediente nao encontrado')
+        else:
+            messages.error(request, 'Nome não pode estar em branco')
+    else:
+        messages.error(request, 'Erro durante a solicitação')
+
+    return redirect('/ingredient/filter')
