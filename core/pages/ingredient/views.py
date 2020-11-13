@@ -101,10 +101,14 @@ def edit_submit(request):
     if request.POST:
         id = request.POST.get("id")
         name = request.POST.get("name")
+        price = request.POST.get("price")
 
         if id:
             if name:
-                Ingredient.update(id, name)
+                if price:
+                    edit_execute(name, price)
+                else:
+                    messages.error(request, "Preço não pode estar em branco")
             else:
                 messages.error(request, "Nome não pode estar em branco")
         else:
@@ -113,3 +117,6 @@ def edit_submit(request):
         messages.error(request, "Erro no post")
 
     return redirect('/ingredient/list')
+
+def edit_execute(name, price):
+    Ingredient.update(id, name, price)

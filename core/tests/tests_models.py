@@ -29,10 +29,25 @@ class ModelsTests(TestCase):
         ingredient = db.Ingredient.get_by_id(1)
         self.assertEqual(ingredient.name, "Pão")
 
-    def test_get_ingredient_update(self):
-        db.Ingredient.update(2, "Bacon")
+    def test_get_ingredient_update_name(self):
+        db.Ingredient.update_name(2, "Bacon")
         ingredient = db.Ingredient.get_by_id(2)
         self.assertEqual(ingredient.name, "Bacon")
+
+    def test_get_ingredient_update_price(self):
+        db.Ingredient.update_price(2, 1.45)
+        ingredient = db.Ingredient.get_info_by_id(2)
+
+        ingredient.price.value = float(ingredient.price.value)
+        self.assertEqual(ingredient.price.value, 1.45)
+
+    def test_get_ingredient_update(self):
+        db.Ingredient.update(2, "Bacon", 2.45)
+        ingredient = db.Ingredient.get_info_by_id(2)
+
+        ingredient.price.value = float(ingredient.price.value)
+        self.assertEqual(ingredient.price.value, 2.45)
+
 
     def test_set_value_ingredient_id_1(self):
         ingredient = db.Ingredient.get_by_id(1)

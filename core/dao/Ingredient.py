@@ -43,9 +43,19 @@ def get_by_id(id):
         return None
 
 
-def update(id, name):
+def update(id, name, price):
+    update_name(id, name)
+    update_price(id, price)
+
+def update_name(id, name):
     try:
         return models.Ingredient.objects.filter(id=id).update(name=name)
+    except:
+        return None
+
+def update_price(id, price):
+    try:
+        return models.IngredientValue.objects.filter(id=id).update(value=price)
     except:
         return None
 
