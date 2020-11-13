@@ -90,4 +90,18 @@ def edit(request, id):
         messages.error(request, "Erro no envio")
 
 def edit_submit(request):
-    return None
+    if request.POST:
+        id = request.POST.get("id")
+        name = request.POST.get("name")
+
+        if id:
+            if name:
+                Ingredient.update(id, name)
+            else:
+                messages.error(request, "Nome não pode estar em branco")
+        else:
+            messages.error(request, "Ingrediente não encontrado")
+    else:
+        messages.error(request, "Erro no post")
+
+    return redirect('/ingredient/list')

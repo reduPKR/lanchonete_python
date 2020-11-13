@@ -40,3 +40,10 @@ def get_by_id(id):
         )
     except:
         return None
+
+
+def update(id, name):
+    try:
+        return models.Ingredient.objects.filter(id=id).update(name=name)
+    except:
+        return None
