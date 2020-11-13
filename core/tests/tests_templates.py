@@ -32,7 +32,7 @@ class TemplatesViewTests(TestCase):
 
     def test_list_ingredient_status_ok(self):
         response = self.client.get(reverse("list_ingredient_view"))
-        print(response)
+
         self.assertEqual(response.status_code, 200)
 
     def test_list_ingredient(self):
@@ -66,7 +66,6 @@ class TemplatesViewTests(TestCase):
     #
     # def test_list_sandwish_status_ok(self):
     #     response = self.client.get(reverse("list_sandwish_view"))
-    #     print(response)
     #     self.assertEqual(response.status_code, 200)
     #
     # def test_list_sandwish(self):
