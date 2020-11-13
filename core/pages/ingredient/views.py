@@ -42,7 +42,8 @@ def list(request):
     dados = {
         'title': 'Lista de ingredientes',
         'header': 'Lista de ingredientes',
-        'icon': 'fas fa-bacon'
+        'icon': 'fas fa-bacon',
+        'ingredients': []
     }
 
     return render(request, 'ingredient/list.html', dados)

@@ -1,5 +1,28 @@
 {% extends 'model-page.html' %}
 
 {% block content %}
-
+    {% if ingredients %}
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr align="center">
+                    <th colspan="2">Ingredientes cadastrados</th>
+                </tr>
+             </thead>
+            {% for item in ingredients %}
+                <tr>
+                    <td>
+                        {{item.name}}
+                    </td>
+                    <td>
+                        <a class="btn btn-secondary" href="#">
+                            <i class="fas fa-check-circle"></i>
+                            Selecionar
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <strong>Nenhum ingrediente cadastrado</strong>
+    {% endif %}
 {% endblock %}
