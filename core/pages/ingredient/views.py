@@ -89,3 +89,5 @@ def edit(request, id):
     else:
         messages.error(request, "Erro no envio")
 
+def edit_submit(request):
+    return None

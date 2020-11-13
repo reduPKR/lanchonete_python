@@ -18,4 +18,5 @@ urlpatterns = [
     path('ingredient/filter/', ingredient.filter, name='filter_ingredient_view'),
     path('ingredient/filter/submit', ingredient.filter_submit),
     path('ingredient/edit/<int:id>', ingredient.edit),
+    path('ingredient/edit/submit', ingredient.edit_submit),
 ]

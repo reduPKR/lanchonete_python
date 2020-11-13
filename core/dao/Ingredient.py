@@ -31,3 +31,12 @@ def filter(name):
         ).order_by('name')
     except:
         return []
+
+
+def get_by_id(id):
+    try:
+        return models.Ingredient.objects.get(
+            id=id
+        )
+    except:
+        return None
