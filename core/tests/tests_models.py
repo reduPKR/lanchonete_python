@@ -18,3 +18,7 @@ class ModelsTests(TestCase):
     def test_get_all_ingredient(self):
         ingredients = db.Ingredient.get_all()
         self.assertIsNotNone(ingredients)
+
+    def test_filter_ingredient(self):
+        ingredients = db.Ingredient.filter('Pã')
+        self.assertNotEqual(len(ingredients),0)
