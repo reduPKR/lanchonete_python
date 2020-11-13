@@ -48,7 +48,6 @@ class ModelsTests(TestCase):
         ingredient.price.value = float(ingredient.price.value)
         self.assertEqual(ingredient.price.value, 2.45)
 
-
     def test_set_value_ingredient_id_1(self):
         ingredient = db.Ingredient.get_by_id(1)
         ingredient_value = db.Ingredient.set_value(ingredient, 1.50)
