@@ -14,3 +14,7 @@ class ModelsTests(TestCase):
     def test_get_ingredient_by_name(self):
         ingredient = db.Ingredient.get_by_name('Hamburger')
         self.assertEqual(ingredient.id, 2)
+
+    def test_get_all_ingredient(self):
+        ingredients = db.Ingredient.get_all()
+        self.assertIsNotNone(ingredients)
