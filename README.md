@@ -5,15 +5,18 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 ## Rotas
 #### Rota para paginas
 **URL dashboard:** 127.0.0.1/admin  
-**URL home-page:**  127.0.0.1/home 
+**URL home-page:**  127.0.0.1/home   
 **URL menu de ingredientes:** 127.0.0.1/ingredient/menu  
 **URL adição de ingredientes:**  127.0.0.1/ingredient/create  
 **URL listagem de ingredientes:**  127.0.0.1/ingredient/list  
-**URL filtragem de ingredientes:**  127.0.0.1/ingredient/filter
+**URL filtragem de ingredientes:**  127.0.0.1/ingredient/filter  
+**URL edição de ingredientes:**  127.0.0.1/ingredient/edit/<int:id>    
+
 
 #### Rotas para Rest  
-**URL adição de ingredientes:**  127.0.0.1/ingredient/create/submit
-**URL filtragem de ingredientes:**  127.0.0.1/ingredient/filter/submit
+**URL adição de ingredientes:**  127.0.0.1/ingredient/create/submit  
+**URL filtragem de ingredientes:**  127.0.0.1/ingredient/filter/submit  
+**URL edição de ingredientes:**  127.0.0.1/ingredient/edit/submit   
 
 ## Tarefas  
 - [X] Criar header e page models  
