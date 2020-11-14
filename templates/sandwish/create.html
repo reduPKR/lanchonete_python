@@ -11,13 +11,45 @@
          </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <select class="form-control"  value='1'>
+                <select class="form-control"  id="ingredient_id" value='{{ item.name }}'>
                     {% for item in ingredients %}
-                        <option value={{ item.id }}> {{ item.name }}</option>
+                        <option value={{ item.name }}> {{ item.name }}</option>
                     {% endfor %}
                 </select>
+                <button type="button" class="btn btn-secondary" onclick="adicionar()" >Adicionar</button>
+            </div>
+        </div>
+         <div class="form-row">
+            <div class="form-group col-md-6">
+                <ul id="ingredientes"></ul>
             </div>
         </div>
     {% endif %}
 
+<script>
+        var lista_ingrediente = [];
+
+        function adicionar() {
+            var lista = document.getElementById('ingredientes');
+            var ingrediente = document.getElementById('ingredient_id').value;
+
+            var li = document.createElement('li');
+            li.innerHTML = ingrediente;
+            lista.appendChild(li);
+
+            document.getElementById('ingredient_id').value='{ingredients[0].name}';
+
+            //input dos ingredientes
+            var dados = (document.getElementsByName('ingredient_list').length > 0)?document.getElementsByName('ingredient_list')[0]:null;
+
+            if(lista_ingrediente.length == 0){
+                lista_ingrediente = lista_ingrediente.concat(dados.value)
+                lista_ingrediente.pop();
+            }
+
+            lista_ingrediente.push(ingrediente)
+            dados.value = lista_ingrediente;
+        }
+
+    </script>
 {% endblock %}
