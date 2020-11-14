@@ -22,4 +22,5 @@ urlpatterns = [
     path('ingredient/edit/submit', ingredient.edit_submit),
 
     path('sandwish/menu/', sandwish.menu, name='menu_sandwish_view'),
+    path('sandwish/create/', sandwish.create, name='create_sandwish_view'),
 ]

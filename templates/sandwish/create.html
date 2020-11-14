@@ -1,0 +1,23 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+
+    {% if sandwich is None%}
+         <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Nome: </label>
+                <input type="text" name="name" minlength="4" maxlength="50" />
+            </div>
+         </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <select class="form-control"  value='1'>
+                    {% for item in ingredients %}
+                        <option value={{ item.id }}> {{ item.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}
