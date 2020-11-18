@@ -1,4 +1,4 @@
 from core import models
 
-def create(name, list):
+def create(name, profit, list):
     pass

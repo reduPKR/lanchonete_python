@@ -8,13 +8,19 @@
     <div align="center">
         <form action="submit" method="POST"> {% csrf_token %}
             <div class="form-row">
-                <label>Nome: </label>
-                <input type="text" name="name" minlength="4" maxlength="50" />
+                <div class="form-group col-md-6">
+                    <label>Nome: </label>
+                    <input type="text" name="name" minlength="4" maxlength="50" />
+                </div>
+                <div class="form-group col-md-6">
+                    <label>lucro: </label>
+                    <input type="number" name="percent" value="2.5" minlength=".5" maxlength="100" step=".5">
+                </div>
              </div><br><br>
             <div class="form-row">
-                <select class="form-control"  id="ingredient_id" value='{{ item.name }}'>
+                <select class="form-control"  id="ingredient_id" value='{{ item.name }} - {{ item.price.value }}'>
                     {% for item in ingredients %}
-                        <option value={{ item.name }}> {{ item.name }} - {{ item.value }}</option>
+                        <option value='{{ item.name }} - {{ item.price.value }}'> {{ item.name }} - {{ item.price.value }}</option>
                     {% endfor %}
                 </select>
                 <br><br>
@@ -47,7 +53,7 @@
             li.innerHTML = ingrediente;
             lista.appendChild(li);
 
-            document.getElementById('ingredient_id').value='{ingredients[0].name} - {ingredients[0].price}';
+            document.getElementById('ingredient_id').value='{ingredients[0].name} - {ingredients[0].price.value}';
 
             //input dos ingredientes
             var dados = (document.getElementsByName('ingredient_list').length > 0)?document.getElementsByName('ingredient_list')[0]:null;

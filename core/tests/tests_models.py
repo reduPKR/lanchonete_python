@@ -76,5 +76,6 @@ class ModelsTests(TestCase):
     def test_create_sandwish(self):
         name = "X-burger"
         list = ["Pão","Hamburger"]
-        sandwish = db.Sandwish.create(name, list)
+        profit = 5.5
+        sandwish = db.Sandwish.create(name, profit, list)
         self.assertEqual(sandwish.id, 1)

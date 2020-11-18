@@ -17,9 +17,9 @@ def create(request):
         'title': 'Criação de lanches',
         'header': 'Novo lanche',
         'icon': 'fas fa-hamburger',
-        'ingredients': Ingredient.get_all()
+        'ingredients': Ingredient.get_all_with_price()
     }
-    print(Ingredient.get_all())
+
     return render(request, 'sandwish/create.html', dados)
 
 
@@ -27,10 +27,14 @@ def create_submit(request):
     if request.POST:
         name = request.POST.get('name')
         ingredient_list = request.POST.get('ingredient_list')
+        profit = request.POST.get('percent')
 
         if name:
             if ingredient_list:
-                list = ingredient_list.split(',')
+                if profit:
+                    list = ingredient_list.split(',')
+                else:
+                    messages.error(request, "Percentual de lucro nao pode estar vazio")
             else:
                 messages.error(request, "Lista de ingredientes vazia")
         else:
