@@ -54,7 +54,7 @@ def return_list(request, list):
         'title': 'Lista de lanches',
         'header': 'Lista de lanches',
         'icon': 'fas fa-hamburger',
-        'sandwich': list
+        'sandwichs': list
     }
 
     return render(request, 'sandwich/list.html', dados)
