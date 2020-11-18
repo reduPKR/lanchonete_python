@@ -24,7 +24,6 @@ def get_all():
     except:
         return None
 
-
 def filter(name):
     try:
         return models.Ingredient.objects.filter(
@@ -85,5 +84,17 @@ def get_info_by_id(id):
         ingredient = get_by_id(id)
         ingredient.price = get_value(ingredient)
         return ingredient
+    except:
+        return None
+
+
+def get_all_with_price():
+    try:
+        ingredients = models.Ingredient.objects.all().order_by('name')
+
+        for item in ingredients:
+            item.price = get_value(item.id)
+
+        return ingredients
     except:
         return None

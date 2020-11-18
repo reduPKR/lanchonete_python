@@ -19,6 +19,7 @@ def create(request):
         'icon': 'fas fa-hamburger',
         'ingredients': Ingredient.get_all()
     }
+    print(Ingredient.get_all())
     return render(request, 'sandwish/create.html', dados)
 
 

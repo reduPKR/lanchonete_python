@@ -67,6 +67,11 @@ class ModelsTests(TestCase):
         ingredient = db.Ingredient.get_info_by_id(1)
         self.assertEqual(ingredient.price.value, 1.25)
 
+    def test_get_value_ingredient_all(self):
+        ingredients = db.Ingredient.get_all_with_price()
+        self.assertEqual(ingredients[0].price.value, 1)
+        self.assertEqual(ingredients[1].price.value, 1.25)
+
     #Sandwish
     def test_create_sandwish(self):
         name = "X-burger"
