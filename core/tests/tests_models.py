@@ -1,5 +1,5 @@
 from django.test import TestCase
-import core.dao as db
+from core import dao as db
 
 class ModelsTests(TestCase):
     def setUp(self):
@@ -73,9 +73,9 @@ class ModelsTests(TestCase):
         self.assertEqual(ingredients[1].price.value, 1.25)
 
     #Sandwish
-    def test_create_sandwish(self):
+    def test_create_sandwich(self):
         name = "X-burger"
         list = ["Pão","Hamburger"]
         profit = 5.5
-        sandwish = db.Sandwish.create(name, profit, list)
-        self.assertEqual(sandwish.id, 1)
+        sandwich = db.Sandwich.create(name, profit, list)
+        self.assertEqual(sandwich.id, 1)
