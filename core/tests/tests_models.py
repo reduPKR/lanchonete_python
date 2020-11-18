@@ -79,3 +79,7 @@ class ModelsTests(TestCase):
         profit = 5.5
         sandwich = Sandwich.create(name, profit, list)
         self.assertEqual(sandwich.id, 1)
+
+    def test_get_all_sandwich(self):
+        sandwich = Sandwich.get_all()
+        self.assertIsNotNone(sandwich)
