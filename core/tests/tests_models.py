@@ -72,7 +72,7 @@ class ModelsTests(TestCase):
         self.assertEqual(ingredients[0].price.value, 1)
         self.assertEqual(ingredients[1].price.value, 1.25)
 
-    #Sandwish
+    #Sandwich
     def test_create_sandwich(self):
         name = "X-burger"
         list = ["Pão","Hamburger"]

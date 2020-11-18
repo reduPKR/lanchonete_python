@@ -48,34 +48,34 @@ class TemplatesViewTests(TestCase):
         self.assertTemplateUsed(response, "ingredient/filter.html")
 
     #Lanches
-    def test_menu_sandwish_status_ok(self):
-        response = self.client.get(reverse("menu_sandwish_view"))
+    def test_menu_sandwich_status_ok(self):
+        response = self.client.get(reverse("menu_sandwich_view"))
         self.assertEqual(response.status_code, 200)
 
-    def test_menu_sandwish(self):
-        response = self.client.get(reverse("menu_sandwish_view"))
-        self.assertTemplateUsed(response, "sandwish/menu.html")
+    def test_menu_sandwich(self):
+        response = self.client.get(reverse("menu_sandwich_view"))
+        self.assertTemplateUsed(response, "sandwich/menu.html")
 
-    def test_create_sandwish_status_ok(self):
-        response = self.client.get(reverse("create_sandwish_view"))
+    def test_create_sandwich_status_ok(self):
+        response = self.client.get(reverse("create_sandwich_view"))
         self.assertEqual(response.status_code, 200)
 
-    def tsandwish_ingredient(self):
-        response = self.client.get(reverse("create_sandwish_view"))
-        self.assertTemplateUsed(response, "sandwish/create.html")
+    def test_sandwich_create(self):
+        response = self.client.get(reverse("create_sandwich_view"))
+        self.assertTemplateUsed(response, "sandwich/create.html")
 
-    def test_list_sandwish_status_ok(self):
-        response = self.client.get(reverse("list_sandwish_view"))
+    def test_list_sandwich_status_ok(self):
+        response = self.client.get(reverse("list_sandwich_view"))
         self.assertEqual(response.status_code, 200)
 
-    def test_list_sandwish(self):
-        response = self.client.get(reverse("list_sandwish_view"))
-        self.assertTemplateUsed(response, "sandwish/list.html")
+    def test_list_sandwich(self):
+        response = self.client.get(reverse("list_sandwich_view"))
+        self.assertTemplateUsed(response, "sandwich/list.html")
 
-    # def test_filter_sandwish_status_ok(self):
-    #     response = self.client.get(reverse("filter_sandwish_view"))
+    # def test_filter_sandwich_status_ok(self):
+    #     response = self.client.get(reverse("filter_sandwich_view"))
     #     self.assertEqual(response.status_code, 200)
     #
-    # def test_filter_sandwish(self):
-    #     response = self.client.get(reverse("filter_sandwish_view"))
-    #     self.assertTemplateUsed(response, "sandwish/filter.html")
+    # def test_filter_sandwich(self):
+    #     response = self.client.get(reverse("filter_sandwich_view"))
+    #     self.assertTemplateUsed(response, "sandwich/filter.html")

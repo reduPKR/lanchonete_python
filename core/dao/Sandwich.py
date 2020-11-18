@@ -34,3 +34,9 @@ def sandwich_recipe(sandwich, ingredient_name):
             sandwich=sandwich,
             ingredient=ingredient
         )
+
+def get_all():
+    try:
+        return models.Sandwich.objects.all().order_by('name')
+    except:
+        return None

@@ -9,7 +9,7 @@ def menu(request):
         'header': 'Menu de lanches',
         'icon': 'fas fa-hamburger'
     }
-    return render(request, 'sandwish/menu.html', dados)
+    return render(request, 'sandwich/menu.html', dados)
 
 def create(request):
     dados = {
@@ -19,7 +19,7 @@ def create(request):
         'ingredients': Ingredient.get_all_with_price()
     }
 
-    return render(request, 'sandwish/create.html', dados)
+    return render(request, 'sandwich/create.html', dados)
 
 def create_submit(request):
     if request.POST:
@@ -44,7 +44,7 @@ def create_submit(request):
     else:
         messages.error(request,"Erro no rest")
 
-    return redirect('/sandwish/create')
+    return redirect('/sandwich/create')
 
 def list(request):
     return return_list(request, Sandwich.get_all())

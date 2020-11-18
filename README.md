@@ -11,7 +11,7 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 **URL listagem de ingredientes:**  127.0.0.1/ingredient/list  
 **URL filtragem de ingredientes:**  127.0.0.1/ingredient/filter  
 **URL edição de ingredientes:**  127.0.0.1/ingredient/edit/<int:id>    
-**URL edição de ingredientes:**  127.0.0.1/sandwish/menu  
+**URL edição de ingredientes:**  127.0.0.1/sandwich/menu  
 
 
 #### Rotas para Rest  
