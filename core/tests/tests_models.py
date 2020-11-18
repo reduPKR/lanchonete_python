@@ -25,7 +25,7 @@ class ModelsTests(TestCase):
         ingredients = db.Ingredient.filter('Pã')
         self.assertNotEqual(len(ingredients),0)
 
-    def test_get_ingredient_by_name(self):
+    def test_get_ingredient_by_id(self):
         ingredient = db.Ingredient.get_by_id(1)
         self.assertEqual(ingredient.name, "Pão")
 
@@ -67,3 +67,9 @@ class ModelsTests(TestCase):
         ingredient = db.Ingredient.get_info_by_id(1)
         self.assertEqual(ingredient.price.value, 1.25)
 
+    #Sandwish
+    def test_create_sandwish(self):
+        name = "X-burger"
+        list = ["Pão","Hamburger"]
+        sandwish = db.Sandwish.create(name, list)
+        self.assertEqual(sandwish.id, 1)
