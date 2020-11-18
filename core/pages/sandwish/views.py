@@ -11,7 +11,6 @@ def menu(request):
     }
     return render(request, 'sandwish/menu.html', dados)
 
-
 def create(request):
     dados = {
         'title': 'Criação de lanches',
@@ -21,7 +20,6 @@ def create(request):
     }
 
     return render(request, 'sandwish/create.html', dados)
-
 
 def create_submit(request):
     if request.POST:
@@ -47,3 +45,16 @@ def create_submit(request):
         messages.error(request,"Erro no rest")
 
     return redirect('/sandwish/create')
+
+def list(request):
+    return return_list(request, Sandwich.get_all())
+
+def return_list(request, list):
+    dados = {
+        'title': 'Lista de lanches',
+        'header': 'Lista de lanches',
+        'icon': 'fas fa-hamburger',
+        'sandwich': list
+    }
+
+    return render(request, 'sandwich/list.html', dados)

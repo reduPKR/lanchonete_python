@@ -1,0 +1,35 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+
+    {% if sandwich %}
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr align="center">
+                    <th>Lanches</th>
+                    <th>Preço</th>
+                    <th>Opções</th>
+                </tr>
+             </thead>
+            {% for item in sandwich %}
+                <tr>
+                    <td>
+                        {{item.name}}
+                    </td>
+                    <td>
+                        {{item.name}}
+                    </td>
+                    <td>
+                        <a class="btn btn-secondary" href="#">
+                            <i class="fas fa-edit"></i>
+                            Editar
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <strong>Nenhum lanche</strong>
+    {% endif %}
+
+{% endblock %}
