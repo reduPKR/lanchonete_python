@@ -20,3 +20,21 @@ def create(request):
         'ingredients': Ingredient.get_all()
     }
     return render(request, 'sandwish/create.html', dados)
+
+
+def create_submit(request):
+    if request.POST:
+        name = request.POST.get('name')
+        ingredient_list = request.POST.get('ingredient_list')
+
+        if name:
+            if ingredient_list:
+                list = ingredient_list.split(',')
+            else:
+                messages.error(request, "Lista de ingredientes vazia")
+        else:
+            messages.error(request, "Nome nao pode estar vazio")
+    else:
+        messages.error(request,"Erro no rest")
+
+    return redirect('/sandwish/create')

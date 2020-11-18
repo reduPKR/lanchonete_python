@@ -1,29 +1,39 @@
 {% extends "model-page.html" %}
 
 {% block content %}
-
+    {% for message in messages %}
+        <span>* Erro: {{ message }}</span><br>
+    {% endfor %}
     {% if sandwich is None%}
-         <div class="form-row">
-            <div class="form-group col-md-6">
+    <div align="center">
+        <form action="submit" method="POST"> {% csrf_token %}
+            <div class="form-row">
                 <label>Nome: </label>
                 <input type="text" name="name" minlength="4" maxlength="50" />
-            </div>
-         </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
+             </div><br><br>
+            <div class="form-row">
                 <select class="form-control"  id="ingredient_id" value='{{ item.name }}'>
                     {% for item in ingredients %}
                         <option value={{ item.name }}> {{ item.name }}</option>
                     {% endfor %}
                 </select>
+                <br><br>
                 <button type="button" class="btn btn-secondary" onclick="adicionar()" >Adicionar</button>
             </div>
-        </div>
-         <div class="form-row">
+            <br><br>
+            <input type="text" id="ingredient_list" name="ingredient_list" value="{{ingredient_list}}" hidden>
+            <button type="submit" class="btn btn-warning btn-block">
+                Finalizar
+            </button>
+        </form>
+        <br>
+        <div class="form-row">
             <div class="form-group col-md-6">
                 <ul id="ingredientes"></ul>
             </div>
         </div>
+    </div>
+
     {% endif %}
 
 <script>
