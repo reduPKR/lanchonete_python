@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-import core.dao.Ingredient as Ingredient
+from core.dao import Ingredient
 
 def menu(request):
     dados = {

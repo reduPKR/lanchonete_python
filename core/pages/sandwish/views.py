@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-import core.dao.Ingredient as Ingredient
+from core.dao import Sandwich, Ingredient
 
 def menu(request):
     dados = {
@@ -33,6 +33,10 @@ def create_submit(request):
             if ingredient_list:
                 if profit:
                     list = ingredient_list.split(',')
+                    sandwich = Sandwich.create(name,profit,list)
+
+                    if sandwich is None:
+                        messages.error(request, "Erro ao cadastrar o lanche")
                 else:
                     messages.error(request, "Percentual de lucro nao pode estar vazio")
             else:
