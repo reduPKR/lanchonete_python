@@ -55,10 +55,8 @@ def sandwich_price(sandwich):
     for item in ingredients:
         ingredient_value = models.IngredientValue.objects.filter(ingredient=item.ingredient).last()
         price += ingredient_value.value
-        print("preco {} valor {}".format(price, ingredient_value.value))
 
     return round(float(price) + (float(price)*percent), 2)
-
 
 def get_by_id(id):
     try:
@@ -77,7 +75,6 @@ def try_get_by_id(id):
 
 def sandwich_ingredients(sandwich):
     return models.SandwichIngredient.objects.filter(sandwich=sandwich)
-
 
 def update(id, name, profit, list):
     try:

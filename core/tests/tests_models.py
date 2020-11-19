@@ -113,7 +113,14 @@ class ModelsTests(TestCase):
         list = ["bacon"]
         Sandwich.update(1, "X-bacon", 10, list)
         sandwich = Sandwich.get_by_id(1)
-        print("*"*100)
-        print(sandwich)
 
         self.assertEqual(sandwich.name, "X-bacon")
+
+    def test_get_sandwich_remove_ingredient(self):
+        sandwich = Sandwich.get_by_id(1)
+        ingredient = Ingredient.get_by_id(2)
+
+        Sandwich.remove_ingredient(sandwich, ingredient)
+        ingredients = Sandwich.sandwich_ingredients(sandwich)
+
+        self.assertEqual(len(ingredients), 2)
