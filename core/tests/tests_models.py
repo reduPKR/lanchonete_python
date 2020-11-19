@@ -107,7 +107,7 @@ class ModelsTests(TestCase):
         Sandwich.add_profit(sandwich, 3.5)
         profit = Sandwich.get_profit(sandwich)
 
-        self.assertEqual(profit, 3.5)
+        self.assertEqual(profit.percent, 3.5)
 
     # def test_get_sandwich_update(self):
     #     list = ["bacon"]

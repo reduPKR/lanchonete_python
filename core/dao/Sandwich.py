@@ -96,3 +96,9 @@ def add_profit(sandwich, profit):
         sandwich=sandwich,
         date=date.today()
     )
+
+def get_profit(sandwich):
+    try:
+        return models.SandwichValue.objects.filter(sandwich=sandwich).last()
+    except:
+        return None
