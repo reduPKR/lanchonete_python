@@ -59,16 +59,18 @@ def return_list(request, list):
 
     return render(request, 'sandwich/list.html', dados)
 
-def edit(request):
-    if request.POST:
-        id = request.POST.get('id')
-        if id:
-            dados = {
-                'title': 'Editar lanche',
-                'header': 'Editar lanche',
-                'icon': 'fas fa-hamburger',
-                'sandwich': Sandwich.get_by_id(id),
-                'ingredients': Ingredient.get_all_with_price()
-            }
+def edit(request, id):
+    if id:
+        dados = {
+            'title': 'Editar lanche',
+            'header': 'Editar lanche',
+            'icon': 'fas fa-hamburger',
+            'sandwich': Sandwich.get_by_id(id),
+            'ingredients': Ingredient.get_all_with_price()
+        }
 
-    return render(request, 'sandwich/create.html', dados)
+        return render(request, 'sandwich/create.html', dados)
+    else:
+        messages.error(request, "ID nao encontrado")
+
+    return redirect('/sandwich/list')

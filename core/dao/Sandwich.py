@@ -59,3 +59,21 @@ def sandwich_price(sandwich):
         price += ingredient_value.value
 
     return round(float(price) + (float(price)*percent), 2)
+
+
+def get_by_id(id):
+    try:
+        return try_get_by_id(id)
+    except:
+        return None
+
+def try_get_by_id(id):
+    sandwich = models.Sandwich.objects.get(id=id)
+
+    sandwich.price = sandwich_price(sandwich)
+    sandwich.ingredients = sandwich_ingredients(sandwich)
+
+    return sandwich
+
+def sandwich_ingredients(sandwich):
+    return models.SandwichIngredient.objects.filter(sandwich=sandwich)
