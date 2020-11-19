@@ -25,4 +25,5 @@ urlpatterns = [
     path('sandwich/create/', sandwich.create, name='create_sandwich_view'),
     path('sandwich/create/submit', sandwich.create_submit),
     path('sandwich/list', sandwich.list, name='list_sandwich_view'),
+    path('sandwich/edit/<int:id>', sandwich.edit),
 ]

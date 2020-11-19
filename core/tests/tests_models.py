@@ -83,3 +83,7 @@ class ModelsTests(TestCase):
     def test_get_all_sandwich(self):
         sandwich = Sandwich.get_all()
         self.assertIsNotNone(sandwich)
+
+    def test_get_sandwich_by_id(self):
+        sandwich = Sandwich.get_by_id(1)
+        self.assertIsNotNone(sandwich)
