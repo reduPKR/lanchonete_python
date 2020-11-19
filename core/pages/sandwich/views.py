@@ -101,3 +101,20 @@ def edit_submit(request):
         messages.error(request, "Erro no rest")
 
     return redirect('/sandwich/list')
+
+
+def remove_ingredient(request,sandwich_id, ingredient_id):
+    if sandwich_id:
+        if ingredient_id:
+            response = Sandwich.remove_ingredient(sandwich_id, ingredient_id)
+
+            if response is None:
+                messages.error(request, "Erro ao atualizar o lanche")
+
+            return redirect('/sandwich/edit/{}'.format(sandwich_id))
+        else:
+            messages.error(request, "Ingrediente não encontrado")
+    else:
+        messages.error(request, "Lanche não encontrado")
+
+    return redirect('/sandwich/list')

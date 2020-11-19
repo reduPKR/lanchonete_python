@@ -113,3 +113,21 @@ def get_profit(sandwich):
         return models.SandwichValue.objects.filter(sandwich=sandwich).last()
     except:
         return None
+
+
+def remove_ingredient(sandwich_id, ingredient_id):
+    try:
+        try_remove_ingredient(sandwich_id, ingredient_id)
+        return True
+    except:
+        return None
+
+def try_remove_ingredient(sandwich_id, ingredient_id):
+    sandwich = get_by_id(sandwich_id)
+    ingredient = Ingredient.get_by_id(ingredient_id)
+
+    if sandwich and ingredient:
+        models.SandwichIngredient.objects.get(
+            ingredient=ingredient,
+            sandwich=sandwich
+        ).delete()

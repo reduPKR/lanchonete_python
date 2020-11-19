@@ -118,9 +118,8 @@ class ModelsTests(TestCase):
 
     def test_get_sandwich_remove_ingredient(self):
         sandwich = Sandwich.get_by_id(1)
-        ingredient = Ingredient.get_by_id(2)
 
-        Sandwich.remove_ingredient(sandwich, ingredient)
+        Sandwich.remove_ingredient(1, 2)
         ingredients = Sandwich.sandwich_ingredients(sandwich)
 
         self.assertEqual(len(ingredients), 2)

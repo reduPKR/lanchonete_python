@@ -27,4 +27,5 @@ urlpatterns = [
     path('sandwich/list', sandwich.list, name='list_sandwich_view'),
     path('sandwich/edit/<int:id>', sandwich.edit),
     path('sandwich/edit/submit', sandwich.edit_submit),
+    path('sandwich/remove/<int:sandwich_id>/<int:ingredient_id>', sandwich.remove_ingredient),
 ]
