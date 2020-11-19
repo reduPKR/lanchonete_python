@@ -102,13 +102,13 @@ class ModelsTests(TestCase):
 
         self.assertEqual(sandwich.name, "X bacon")
 
-    # def test_get_sandwich_add_profit(self):
-    #     sandwich = Sandwich.get_by_id(1)
-    #     Sandwich.add_profit(sandwich, 3.5)
-    #     sandwich = Sandwich.get_by_id(1)
-    #
-    #     self.assertEqual(sandwich.price, 3.5)
-    #
+    def test_get_sandwich_add_profit(self):
+        sandwich = Sandwich.get_by_id(1)
+        Sandwich.add_profit(sandwich, 3.5)
+        profit = Sandwich.get_profit(sandwich)
+
+        self.assertEqual(profit, 3.5)
+
     # def test_get_sandwich_update(self):
     #     list = ["bacon"]
     #     Sandwich.update(1, "X-bacon", 10, list)
