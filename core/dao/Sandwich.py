@@ -14,19 +14,17 @@ def try_create(name, profit, list):
 
     if len(sandwich_test) == 0:
         sandwich = models.Sandwich.objects.create(name=name)
-        models.SandwichValue.objects.create(
-            percent=profit,
-            sandwich=sandwich,
-            date=date.today()
-        )
+        add_profit(sandwich, profit)
+        prepare_list(sandwich, list)
 
-        sandwich = models.Sandwich.objects.get(id=2)
-        for item in list:
-            name_sandwich = item.split(" - ")
-            sandwich_recipe(sandwich, name_sandwich[0])
         return sandwich
     else:
         return None
+
+def prepare_list(sandwich, list):
+    for item in list:
+        name_sandwich = item.split(" - ")
+        sandwich_recipe(sandwich, name_sandwich[0])
 
 def sandwich_recipe(sandwich, ingredient_name):
     ingredient = Ingredient.get_by_name(ingredient_name)
@@ -80,4 +78,21 @@ def sandwich_ingredients(sandwich):
 
 
 def update(id, name, profit, list):
-    pass
+    try:
+        update_name(id, name)
+
+        sandwich = models.Sandwich.objects.create(id=id)
+        add_profit(id, profit)
+        prepare_list(sandwich, list)
+    except:
+        return None
+
+def update_name(id, name):
+    models.Sandwich.objects.filter(id=id).update(name=name)
+
+def add_profit(sandwich, profit):
+    models.SandwichValue.objects.create(
+        percent=profit,
+        sandwich=sandwich,
+        date=date.today()
+    )

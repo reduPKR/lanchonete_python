@@ -88,6 +88,19 @@ class ModelsTests(TestCase):
         sandwich = Sandwich.get_by_id(1)
         self.assertIsNotNone(sandwich)
 
+    def test_get_sandwich_update_name(self):
+        Sandwich.update_name(1, "X bacon")
+        sandwich = Sandwich.get_by_id(1)
+
+        self.assertEqual(sandwich.name, "X bacon")
+
+    def test_get_sandwich_add_profit(self):
+        sandwich = Sandwich.get_by_id(1)
+        Sandwich.add_profit(sandwich, 3.5)
+        sandwich = Sandwich.get_by_id(1)
+
+        self.assertEqual(sandwich.price, 3.5)
+
     def test_get_sandwich_update(self):
         list = ["bacon"]
         Sandwich.update(1, "X-bacon", 10, list)
