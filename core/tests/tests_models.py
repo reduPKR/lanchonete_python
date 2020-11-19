@@ -109,9 +109,11 @@ class ModelsTests(TestCase):
 
         self.assertEqual(profit.percent, 3.5)
 
-    # def test_get_sandwich_update(self):
-    #     list = ["bacon"]
-    #     Sandwich.update(1, "X-bacon", 10, list)
-    #     sandwich = Sandwich.get_by_id(1)
-    #
-    #     self.assertEqual(sandwich.name, "X-bacon")
+    def test_get_sandwich_update(self):
+        list = ["bacon"]
+        Sandwich.update(1, "X-bacon", 10, list)
+        sandwich = Sandwich.get_by_id(1)
+        print("*"*100)
+        print(sandwich)
+
+        self.assertEqual(sandwich.name, "X-bacon")

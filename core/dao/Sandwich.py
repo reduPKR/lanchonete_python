@@ -81,8 +81,8 @@ def update(id, name, profit, list):
     try:
         update_name(id, name)
 
-        sandwich = models.Sandwich.objects.create(id=id)
-        add_profit(id, profit)
+        sandwich = models.Sandwich.objects.get(id=id)
+        add_profit(sandwich, profit)
         prepare_list(sandwich, list)
     except:
         return None
