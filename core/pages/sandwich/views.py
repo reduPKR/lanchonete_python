@@ -82,20 +82,19 @@ def edit_submit(request):
         ingredient_list = request.POST.get('ingredient_list')
         profit = request.POST.get('percent')
 
-        if name:
-            if ingredient_list:
-                if profit:
+        if name or ingredient_list or profit:
                     list = ingredient_list.split(',')
                     sandwich = Sandwich.update(id, name, profit, list)
 
                     if sandwich is None:
-                        messages.error(request, "Erro ao cadastrar o lanche")
-                else:
-                    messages.error(request, "Percentual de lucro nao pode estar vazio")
-            else:
-                messages.error(request, "Lista de ingredientes vazia")
+                        messages.error(request, "Erro ao atualizar o lanche")
         else:
-            messages.error(request, "Nome nao pode estar vazio")
+            if profit is None:
+                messages.error(request, "Percentual de lucro nao pode estar vazio")
+            if ingredient_list is None:
+                messages.error(request, "Lista de ingredientes vazia")
+            if name is None:
+                messages.error(request, "Nome nao pode estar vazio")
 
         return redirect('/sandwich/edit/{}'.format(id))
     else:

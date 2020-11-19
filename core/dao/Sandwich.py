@@ -55,6 +55,7 @@ def sandwich_price(sandwich):
     for item in ingredients:
         ingredient_value = models.IngredientValue.objects.filter(ingredient=item.ingredient).last()
         price += ingredient_value.value
+        print("preco {} valor {}".format(price, ingredient_value.value))
 
     return round(float(price) + (float(price)*percent), 2)
 
@@ -68,6 +69,7 @@ def get_by_id(id):
 def try_get_by_id(id):
     sandwich = models.Sandwich.objects.get(id=id)
 
+    sandwich.profit = get_profit(sandwich)
     sandwich.price = sandwich_price(sandwich)
     sandwich.ingredients = sandwich_ingredients(sandwich)
 
@@ -82,13 +84,25 @@ def update(id, name, profit, list):
         update_name(id, name)
 
         sandwich = models.Sandwich.objects.get(id=id)
-        add_profit(sandwich, profit)
         prepare_list(sandwich, list)
+
+        if validade_profit(sandwich, profit):
+            add_profit(sandwich, profit)
+
+        return True
     except:
         return None
 
 def update_name(id, name):
     models.Sandwich.objects.filter(id=id).update(name=name)
+
+def validade_profit(sandwich, profit):
+    value = models.SandwichValue.objects.filter(sandwich=sandwich).last()
+
+    if float(value.percent) == float(profit):
+        return False
+    else:
+        return True
 
 def add_profit(sandwich, profit):
     models.SandwichValue.objects.create(
