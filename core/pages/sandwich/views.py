@@ -74,3 +74,31 @@ def edit(request, id):
         messages.error(request, "ID nao encontrado")
 
     return redirect('/sandwich/list')
+
+def edit_submit(request):
+    if request.POST:
+        id = request.POST.get('id')
+        name = request.POST.get('name')
+        ingredient_list = request.POST.get('ingredient_list')
+        profit = request.POST.get('percent')
+
+        if name:
+            if ingredient_list:
+                if profit:
+                    list = ingredient_list.split(',')
+                    sandwich = Sandwich.update(id, name, profit, list)
+
+                    if sandwich is None:
+                        messages.error(request, "Erro ao cadastrar o lanche")
+                else:
+                    messages.error(request, "Percentual de lucro nao pode estar vazio")
+            else:
+                messages.error(request, "Lista de ingredientes vazia")
+        else:
+            messages.error(request, "Nome nao pode estar vazio")
+
+        return redirect('/sandwich/edit/{}'.format(id))
+    else:
+        messages.error(request, "Erro no rest")
+
+    return redirect('/sandwich/list')

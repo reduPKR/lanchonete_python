@@ -87,3 +87,10 @@ class ModelsTests(TestCase):
     def test_get_sandwich_by_id(self):
         sandwich = Sandwich.get_by_id(1)
         self.assertIsNotNone(sandwich)
+
+    def test_get_sandwich_update(self):
+        list = ["bacon"]
+        Sandwich.update(1, "X-bacon", 10, list)
+        sandwich = Sandwich.get_by_id(1)
+
+        self.assertEqual(sandwich.name, "X-bacon")

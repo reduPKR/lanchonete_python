@@ -77,3 +77,7 @@ def try_get_by_id(id):
 
 def sandwich_ingredients(sandwich):
     return models.SandwichIngredient.objects.filter(sandwich=sandwich)
+
+
+def update(id, name, profit, list):
+    pass
