@@ -72,10 +72,10 @@ class TemplatesViewTests(TestCase):
         response = self.client.get(reverse("list_sandwich_view"))
         self.assertTemplateUsed(response, "sandwich/list.html")
 
-    # def test_filter_sandwich_status_ok(self):
-    #     response = self.client.get(reverse("filter_sandwich_view"))
-    #     self.assertEqual(response.status_code, 200)
-    #
-    # def test_filter_sandwich(self):
-    #     response = self.client.get(reverse("filter_sandwich_view"))
-    #     self.assertTemplateUsed(response, "sandwich/filter.html")
+    def test_filter_sandwich_status_ok(self):
+        response = self.client.get(reverse("filter_sandwich_view"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_filter_sandwich(self):
+        response = self.client.get(reverse("filter_sandwich_view"))
+        self.assertTemplateUsed(response, "sandwich/filter.html")

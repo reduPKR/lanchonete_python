@@ -23,6 +23,8 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 **URL edição de ingredientes:**  127.0.0.1/ingredient/edit/submit  
 **URL criaçao de lanches:** 127.0.0.1/sandwich/create/submit  
 **URL editar de lanche:** 127.0.0.1/sandwich/edit/submit  
+**URL remover ingrediente do lanche:** 127.0.0.1/sandwich/remove/<int:sandwich_id>/<int:ingredient_id>  
+
 
 ## Tarefas  
 - [X] Criar header e page models  

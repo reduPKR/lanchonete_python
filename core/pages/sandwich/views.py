@@ -118,3 +118,13 @@ def remove_ingredient(request,sandwich_id, ingredient_id):
         messages.error(request, "Lanche não encontrado")
 
     return redirect('/sandwich/list')
+
+
+def filter(request):
+    dados = {
+        'title': 'Filtragem de lanches',
+        'header': 'Filtragem de lanches',
+        'icon': 'fas fa-bacon'
+    }
+
+    return render(request, 'sandwich/filter.html', dados)
