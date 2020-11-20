@@ -123,3 +123,11 @@ class ModelsTests(TestCase):
         ingredients = Sandwich.sandwich_ingredients(sandwich)
 
         self.assertEqual(len(ingredients), 2)
+
+    def test_filter_sandwich_name(self):
+        sandwich = Sandwich.filter("X")
+        self.assertNotEqual(len(sandwich), 0)
+
+    def test_filter_sandwich_ingredient(self):
+        sandwich = Sandwich.filter("Hamburger")
+        self.assertNotEqual(len(sandwich), 0)

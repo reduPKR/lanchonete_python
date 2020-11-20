@@ -14,7 +14,9 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 **URL menu de lanches:**  127.0.0.1/sandwich/menu  
 **URL criaçao de lanches:** 127.0.0.1/sandwich/create  
 **URL listagem de lanches:** 127.0.0.1/sandwich/list  
-**URL editar de lanche:** 127.0.0.1/sandwich/edit/<int:id>          
+**URL editar de lanche:** 127.0.0.1/sandwich/edit/<int:id>    
+**URL filtragem de lanches:**  127.0.0.1/sandwich/filter  
+     
 
 
 #### Rotas para Rest  
@@ -24,6 +26,8 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 **URL criaçao de lanches:** 127.0.0.1/sandwich/create/submit  
 **URL editar de lanche:** 127.0.0.1/sandwich/edit/submit  
 **URL remover ingrediente do lanche:** 127.0.0.1/sandwich/remove/<int:sandwich_id>/<int:ingredient_id>  
+**URL filtragem de lanches:**  127.0.0.1/sandwich/filter/submit   
+
 
 
 ## Tarefas  
