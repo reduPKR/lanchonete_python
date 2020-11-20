@@ -131,3 +131,19 @@ def try_remove_ingredient(sandwich_id, ingredient_id):
             ingredient=ingredient,
             sandwich=sandwich
         ).delete()
+
+
+def filter(search):
+    sandwichs = list(models.Sandwich.objects.filter(name__contains=search))
+
+    ingredients = Ingredient.filter(search)
+    for ingredient in ingredients:
+        itens = models.SandwichIngredient.objects.filter(ingredient=ingredient)
+
+        for item in itens:
+            if item.sandwich not in sandwichs:
+                sandwichs.append(item.sandwich)
+
+    return sandwichs
+
+
