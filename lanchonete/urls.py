@@ -5,6 +5,7 @@ from django.views.generic import RedirectView
 from core.pages.templates import views as template
 from core.pages.ingredient import views as ingredient
 from core.pages.sandwich import views as sandwich
+from core.pages.beverage import views as beverage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,5 +31,7 @@ urlpatterns = [
     path('sandwich/remove/<int:sandwich_id>/<int:ingredient_id>', sandwich.remove_ingredient),
     path('sandwich/filter/', sandwich.filter, name='filter_sandwich_view'),
     path('sandwich/filter/submit', sandwich.filter_submit),
+
+    path('beverage/menu/', beverage.menu, name='menu_beverage_view'),
 ]
 

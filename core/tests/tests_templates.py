@@ -89,26 +89,26 @@ class TemplatesViewTests(TestCase):
             response = self.client.get(reverse("menu_beverage_view"))
             self.assertTemplateUsed(response, "beverage/menu.html")
 
-        def test_create_beverage_status_ok(self):
-            response = self.client.get(reverse("create_beverage_view"))
-            self.assertEqual(response.status_code, 200)
-
-        def test_beverage_create(self):
-            response = self.client.get(reverse("create_beverage_view"))
-            self.assertTemplateUsed(response, "beverage/create.html")
-
-        def test_list_beverage_status_ok(self):
-            response = self.client.get(reverse("list_beverage_view"))
-            self.assertEqual(response.status_code, 200)
-
-        def test_list_beverage(self):
-            response = self.client.get(reverse("list_beverage_view"))
-            self.assertTemplateUsed(response, "beverage/list.html")
-
-        def test_filter_beverage_status_ok(self):
-            response = self.client.get(reverse("filter_beverage_view"))
-            self.assertEqual(response.status_code, 200)
-
-        def test_filter_beverage(self):
-            response = self.client.get(reverse("filter_beverage_view"))
-            self.assertTemplateUsed(response, "beverage/filter.html")
+        # def test_create_beverage_status_ok(self):
+        #     response = self.client.get(reverse("create_beverage_view"))
+        #     self.assertEqual(response.status_code, 200)
+        #
+        # def test_beverage_create(self):
+        #     response = self.client.get(reverse("create_beverage_view"))
+        #     self.assertTemplateUsed(response, "beverage/create.html")
+        #
+        # def test_list_beverage_status_ok(self):
+        #     response = self.client.get(reverse("list_beverage_view"))
+        #     self.assertEqual(response.status_code, 200)
+        #
+        # def test_list_beverage(self):
+        #     response = self.client.get(reverse("list_beverage_view"))
+        #     self.assertTemplateUsed(response, "beverage/list.html")
+        #
+        # def test_filter_beverage_status_ok(self):
+        #     response = self.client.get(reverse("filter_beverage_view"))
+        #     self.assertEqual(response.status_code, 200)
+        #
+        # def test_filter_beverage(self):
+        #     response = self.client.get(reverse("filter_beverage_view"))
+        #     self.assertTemplateUsed(response, "beverage/filter.html")
