@@ -1,0 +1,29 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+
+{% for message in messages %}
+        <span>* Erro: {{ message }}</span><br>
+    {% endfor %}
+    {% if beverage is None%}
+        <div align="center">
+            <form action="submit" method="POST"> {% csrf_token %}
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Nome: </label>
+                        <input type="text" name="name" minlength="4" maxlength="50" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Tamanho: </label>
+                        <input type="text" name="size" minlength="4" maxlength="10" />
+                    </div>
+                </div>
+                <br><br>
+                <button type="submit" class="btn btn-warning btn-block">
+                    Finalizar
+                </button>
+            </form>
+        </div>
+    {% endif %}
+
+{% endblock %}

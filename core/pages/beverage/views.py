@@ -15,4 +15,5 @@ def create(request):
         'header': 'Cadastro de bebida',
         'icon': 'fas fa-glass-martini'
     }
+
     return render(request, 'beverage/create.html', dados)
