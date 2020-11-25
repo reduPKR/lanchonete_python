@@ -1,4 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+
+from core.dao import Beverage
+
 
 def menu(request):
     dados = {
@@ -17,3 +21,27 @@ def create(request):
     }
 
     return render(request, 'beverage/create.html', dados)
+
+def create_submit(request):
+    if request.POST:
+        name = request.POST.get('name')
+        size = request.POST.get('size')
+        value = request.POST.get('value')
+
+        if name:
+            if size:
+                if value:
+                    beverage = Beverage.create(name,size,value)
+
+                    if beverage is None:
+                        messages.error(request, "Erro ao cadastrar a bebida")
+                else:
+                    messages.error(request, "Valor da bebida nao pode estar vazia")
+            else:
+                messages.error(request, "Tamanho da bebida nao pode estar vazia")
+        else:
+            messages.error(request, "Nome nao pode estar vazio")
+    else:
+        messages.error(request, "Erro no rest")
+
+    return redirect('/beverage/create')

@@ -16,8 +16,7 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 **URL listagem de lanches:** 127.0.0.1/sandwich/list  
 **URL editar de lanche:** 127.0.0.1/sandwich/edit/<int:id>    
 **URL filtragem de lanches:**  127.0.0.1/sandwich/filter  
-     
-
+**URL adicionar nova bebida:**  127.0.0.1/beverage/create  
 
 #### Rotas para Rest  
 **URL adição de ingredientes:**  127.0.0.1/ingredient/create/submit  
@@ -27,7 +26,7 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 **URL editar de lanche:** 127.0.0.1/sandwich/edit/submit  
 **URL remover ingrediente do lanche:** 127.0.0.1/sandwich/remove/<int:sandwich_id>/<int:ingredient_id>  
 **URL filtragem de lanches:**  127.0.0.1/sandwich/filter/submit   
-
+**URL adicionar nova bebida:**  127.0.0.1/beverage/create/submit   
 
 
 ## Tarefas  
@@ -52,10 +51,10 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 - [X] Tela para atualizar lanches  
 - [ ] Testes templates  bebidas  
 - [ ] Testes para models bebidas  
-- [ ] Menu de bebidas  
+- [X] Menu de bebidas  
 - [ ] Tela para listar bebidas  
 - [ ] Tela para filtrar bebidas  
-- [ ] Tela para cadastrar  
+- [X] Tela para cadastrar  
 - [ ] Tela para atualizar bebidas  
 - [ ] Testes templates  pedido  
 - [ ] Testes para models pedido  
@@ -65,6 +64,6 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 - [ ] Finalizar um pedido     
 
 ## Banco de dados  
-
+####Vi alguns erros no banco, deixar assim por enquanto
 ![image](https://user-images.githubusercontent.com/56879793/98428575-ec762300-2080-11eb-87cc-74fd8de9081f.png)
  
