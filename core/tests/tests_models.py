@@ -1,5 +1,5 @@
 from django.test import TestCase
-from core.dao import Ingredient, Sandwich
+from core.dao import Ingredient, Sandwich, Beverage
 
 class ModelsTests(TestCase):
     def setUp(self):
@@ -14,6 +14,8 @@ class ModelsTests(TestCase):
         list = ["Pão", "Hamburger", "Bacon"]
         profit = 5.5
         sandwich = Sandwich.create(name, profit, list)
+
+        beverage = Beverage.create("Coca-cola", "2 Litros", 6)
 
 
     #Ingredientes
@@ -131,3 +133,8 @@ class ModelsTests(TestCase):
     def test_filter_sandwich_ingredient(self):
         sandwich = Sandwich.filter("Hamburger")
         self.assertNotEqual(len(sandwich), 0)
+
+    #Beverage
+    def test_create_beverage(self):
+        beverage = Beverage.create("Suco de laranja", "1 Litro", 3.9)
+        self.assertEqual(beverage.id, 2)
