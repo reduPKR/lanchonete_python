@@ -31,7 +31,24 @@ def try_get_all():
     beverages = models.Beverage.objects.all().order_by("name")
 
     for item in beverages:
-        beverage = models.BeverageValue.objects.filter(beverage=item).last()
-        item.price = beverage.value
+        item.price = get_price(item)
+
+    return beverages
+
+def get_price(beverage):
+    beverage = models.BeverageValue.objects.filter(beverage=beverage).last()
+    return beverage.value
+
+def filter(search):
+    try:
+        return try_filter(search)
+    except:
+        return None
+
+def try_filter(search):
+    beverages = models.Beverage.objects.filter(name__contains=search).order_by("name")
+
+    for item in beverages:
+        item.price = get_price(item)
 
     return beverages
