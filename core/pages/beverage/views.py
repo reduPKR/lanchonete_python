@@ -56,3 +56,11 @@ def list(request):
     }
 
     return render(request, 'beverage/list.html', dados)
+
+
+def filter(request):
+    return None
+
+
+def filter_submit(request):
+    return None

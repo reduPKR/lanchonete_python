@@ -104,11 +104,11 @@ class TemplatesViewTests(TestCase):
         def test_list_beverage(self):
             response = self.client.get(reverse("list_beverage_view"))
             self.assertTemplateUsed(response, "beverage/list.html")
-        #
-        # def test_filter_beverage_status_ok(self):
-        #     response = self.client.get(reverse("filter_beverage_view"))
-        #     self.assertEqual(response.status_code, 200)
-        #
-        # def test_filter_beverage(self):
-        #     response = self.client.get(reverse("filter_beverage_view"))
-        #     self.assertTemplateUsed(response, "beverage/filter.html")
+
+        def test_filter_beverage_status_ok(self):
+            response = self.client.get(reverse("filter_beverage_view"))
+            self.assertEqual(response.status_code, 200)
+
+        def test_filter_beverage(self):
+            response = self.client.get(reverse("filter_beverage_view"))
+            self.assertTemplateUsed(response, "beverage/filter.html")
