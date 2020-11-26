@@ -129,16 +129,6 @@ def filter(request):
 
     return render(request, 'sandwich/filter.html', dados)
 
-def filter(request):
-    dados = {
-        'title': 'Filtragem de lanches',
-        'header': 'Filtragem de lanches',
-        'icon': 'fas fa-bacon'
-    }
-
-    return render(request, 'sandwich/filter.html', dados)
-
-
 def filter_submit(request):
     if request.GET:
         search = request.GET.get("search")

@@ -59,8 +59,13 @@ def list(request):
 
 
 def filter(request):
-    return None
+    dados = {
+        'title': 'Filtragem de bebidas',
+        'header': 'Filtragem de bebidas',
+        'icon': 'fas fa-bacon'
+    }
 
+    return render(request, 'beverage/filter.html', dados)
 
 def filter_submit(request):
     return None
