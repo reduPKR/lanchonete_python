@@ -48,11 +48,14 @@ def create_submit(request):
 
 
 def list(request):
+    return return_list(request, Beverage.get_all())
+
+def return_list(request, list):
     dados = {
         'title': 'Lista de bebidas',
         'header': 'Lista de bebidas',
         'icon': 'fas fa-glass-martini',
-        'beverages': Beverage.get_all()
+        'beverages': list
     }
 
     return render(request, 'beverage/list.html', dados)
@@ -68,4 +71,18 @@ def filter(request):
     return render(request, 'beverage/filter.html', dados)
 
 def filter_submit(request):
-    return None
+    if request.GET:
+        search = request.GET.get("search")
+        if search:
+            beverages = Beverage.filter(search)
+
+            if len(beverages) > 0:
+                return return_list(request, beverages)
+            else:
+                messages.error(request, 'Bebida não encontrada')
+        else:
+            messages.error(request, 'Busca esta vazia')
+    else:
+        messages.error(request, 'Erro durante a solicitação')
+
+    return redirect('/beverage/filter')

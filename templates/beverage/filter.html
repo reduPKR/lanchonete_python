@@ -1,0 +1,15 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+    {% for message in messages %}
+        <span>* Erro: {{ message }}</span><br>
+    {% endfor %}
+    <form action="submit" method="GET"> {% csrf_token %}
+        <label>Buscar: </label>
+        <input type="text" name="search" maxlength="50" size="50" placeholder="Bebida">
+        <br><br>
+        <button class="btn btn-warning btn-lg btn-block" type="submit">
+            <i class="fas fa-filter"></i> Filtrar
+        </button>
+    </form>
+{% endblock %}
