@@ -51,7 +51,8 @@ def list(request):
     dados = {
         'title': 'Lista de bebidas',
         'header': 'Lista de bebidas',
-        'icon': 'fas fa-glass-martini'
+        'icon': 'fas fa-glass-martini',
+        'beverages': Beverage.get_all()
     }
 
     return render(request, 'beverage/list.html', dados)
