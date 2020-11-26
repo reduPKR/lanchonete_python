@@ -138,3 +138,11 @@ class ModelsTests(TestCase):
     def test_create_beverage(self):
         beverage = Beverage.create("Suco de laranja", "1 Litro", 3.9)
         self.assertEqual(beverage.id, 2)
+
+    def test_get_all_beverage(self):
+        beverage = Beverage.get_all()
+        self.assertIsNotNone(beverage)
+
+    def test_get_beverage_by_id(self):
+        beverage = Beverage.get_by_id(1)
+        self.assertEqual(beverage.name,"Coca-cola")

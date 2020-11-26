@@ -45,3 +45,13 @@ def create_submit(request):
         messages.error(request, "Erro no rest")
 
     return redirect('/beverage/create')
+
+
+def list(request):
+    dados = {
+        'title': 'Lista de bebidas',
+        'header': 'Lista de bebidas',
+        'icon': 'fas fa-glass-martini'
+    }
+
+    return render(request, 'beverage/list.html', dados)

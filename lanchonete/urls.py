@@ -35,5 +35,6 @@ urlpatterns = [
     path('beverage/menu/', beverage.menu, name='menu_beverage_view'),
     path('beverage/create/', beverage.create, name='create_beverage_view'),
     path('beverage/create/submit', beverage.create_submit),
+    path('beverage/list', beverage.list, name='list_beverage_view'),
 ]
 
