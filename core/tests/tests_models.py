@@ -143,6 +143,6 @@ class ModelsTests(TestCase):
         beverage = Beverage.get_all()
         self.assertIsNotNone(beverage)
 
-    def test_get_beverage_by_id(self):
-        beverage = Beverage.get_by_id(1)
-        self.assertEqual(beverage.name,"Coca-cola")
+    # def test_get_beverage_by_id(self):
+    #     beverage = Beverage.get_by_id(1)
+    #     self.assertEqual(beverage.name,"Coca-cola")

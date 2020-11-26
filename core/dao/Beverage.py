@@ -19,3 +19,19 @@ def add_price(beverage, value):
         value=value,
         date=date.today()
     )
+
+
+def get_all():
+    try:
+        return try_get_all()
+    except:
+        return None
+
+def try_get_all():
+    beverages = models.Beverage.objects.all().order_by("name")
+
+    for item in beverages:
+        beverage = models.BeverageValue.objects.filter(beverage=item).last()
+        item.price = beverage.value
+
+    return beverages
