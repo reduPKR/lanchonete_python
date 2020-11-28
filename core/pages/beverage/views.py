@@ -65,7 +65,7 @@ def filter(request):
     dados = {
         'title': 'Filtragem de bebidas',
         'header': 'Filtragem de bebidas',
-        'icon': 'fas fa-bacon'
+        'icon': 'fas fa-glass-martini',
     }
 
     return render(request, 'beverage/filter.html', dados)
@@ -86,3 +86,23 @@ def filter_submit(request):
         messages.error(request, 'Erro durante a solicitação')
 
     return redirect('/beverage/filter')
+
+
+def edit(request,id):
+    if id:
+        dados = {
+            'title': 'Editar bebida',
+            'header': 'Editar bebida',
+            'icon': 'fas fa-glass-martini',
+            'beverage': Beverage.get_by_id(id),
+        }
+
+        return render(request, 'beverage/create.html', dados)
+    else:
+        messages.error(request, "ID nao encontrado")
+
+    return redirect('/beverage/list')
+
+
+def edit_submit(request):
+    return None

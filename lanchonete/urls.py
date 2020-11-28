@@ -38,5 +38,7 @@ urlpatterns = [
     path('beverage/list', beverage.list, name='list_beverage_view'),
     path('beverage/filter/', beverage.filter, name='filter_beverage_view'),
     path('beverage/filter/submit', beverage.filter_submit),
+    path('beverage/edit/<int:id>', beverage.edit),
+    path('beverage/edit/submit', beverage.edit_submit),
 ]
 
