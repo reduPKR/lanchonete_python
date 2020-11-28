@@ -147,6 +147,18 @@ class ModelsTests(TestCase):
         beverages = Beverage.filter("Coca-cola")
         self.assertNotEqual(len(beverages), 0)
 
-    # def test_get_beverage_by_id(self):
-    #     beverage = Beverage.get_by_id(1)
-    #     self.assertEqual(beverage.name,"Coca-cola")
+    def test_get_beverage_by_id(self):
+        beverage = Beverage.get_by_id(1)
+        self.assertEqual(beverage.name,"Coca-cola")
+
+    def test_get_beverage_update_name(self):
+        Beverage.update_name(1, "Suco de laranja")
+        beverage = Beverage.get_by_id(1)
+
+        self.assertEqual(beverage.name, "Suco de laranja")
+
+    def test_get_beverage_update(self):
+        Beverage.update(1, "Suco de limão", 5)
+        beverage = Beverage.get_by_id(1)
+
+        self.assertEqual(beverage.name, "Suco de limão")
