@@ -20,7 +20,6 @@ def add_price(beverage, value):
         date=date.today()
     )
 
-
 def get_all():
     try:
         return try_get_all()
@@ -67,3 +66,33 @@ def try_get_by_id(id):
 
 def get_beverage_by_id(id):
     return models.Beverage.objects.get(id=id)
+
+def update_name(id, name):
+    models.Beverage.objects.filter(id=id).update(name=name)
+
+def update_size(id, size):
+    models.Beverage.objects.filter(id=id).update(size=size)
+
+def validade_price(beverage, price):
+    value = models.BeverageValue.objects.filter(beverage=beverage).last()
+
+    if float(value.value) == float(price):
+        return False
+    else:
+        return True
+
+def update(id, name, size, price):
+    try:
+        return try_update(id, name, size, price)
+    except:
+        return None
+
+def try_update(id, name, size, price):
+    update_name(id, name)
+    update_size(id, size)
+
+    beverage = models.Beverage.objects.get(id=id)
+    if validade_price(beverage, price):
+        add_price(beverage, price)
+
+    return True

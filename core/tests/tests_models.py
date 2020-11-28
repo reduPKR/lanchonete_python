@@ -161,7 +161,7 @@ class ModelsTests(TestCase):
         Beverage.update_size(1, "3 litros")
         beverage = Beverage.get_by_id(1)
 
-        self.assertEqual(beverage.name, "Suco de laranja")
+        self.assertEqual(beverage.size, "3 litros")
 
     def test_get_beverage_update(self):
         Beverage.update(1, "Suco de limão", "1 litro", 5)

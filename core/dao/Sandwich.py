@@ -78,17 +78,20 @@ def sandwich_ingredients(sandwich):
 
 def update(id, name, profit, list):
     try:
-        update_name(id, name)
-
-        sandwich = models.Sandwich.objects.get(id=id)
-        prepare_list(sandwich, list)
-
-        if validade_profit(sandwich, profit):
-            add_profit(sandwich, profit)
-
-        return True
+        return try_update(id, name, profit, list)
     except:
         return None
+
+def try_update(id, name, profit, list):
+    update_name(id, name)
+
+    sandwich = models.Sandwich.objects.get(id=id)
+    prepare_list(sandwich, list)
+
+    if validade_profit(sandwich, profit):
+        add_profit(sandwich, profit)
+
+    return True
 
 def update_name(id, name):
     models.Sandwich.objects.filter(id=id).update(name=name)
