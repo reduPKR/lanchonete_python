@@ -2,7 +2,7 @@
 
 {% block content %}
 
-{% for message in messages %}
+    {% for message in messages %}
         <span>* Erro: {{ message }}</span><br>
     {% endfor %}
     {% if beverage is None%}
@@ -23,6 +23,33 @@
                     <div class="form-group col-md-6">
                         <label>Valor: </label>
                         <input type="number" name="value" value="5" minlength="0" step=".05" />
+                    </div>
+                </div>
+                <br><br>
+                <button type="submit" class="btn btn-warning btn-block">
+                    Finalizar
+                </button>
+            </form>
+        </div>
+    {% else %}
+        <div align="center">
+            <form action="submit" method="POST"> {% csrf_token %}
+                <input name="id" value="{{beverage.id}}" hidden>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Nome: </label>
+                        <input type="text" name="name" value="{{beverage.name}}" minlength="4" maxlength="50" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Tamanho: </label>
+                        <input type="text" name="size" value="{{beverage.size}}" minlength="4" maxlength="10" />
+                    </div>
+                </div>
+                <br>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Valor: </label>
+                        <input type="number" name="value" value="{{beverage.price}}" minlength="0" step=".05" />
                     </div>
                 </div>
                 <br><br>

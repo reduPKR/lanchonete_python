@@ -52,3 +52,18 @@ def try_filter(search):
         item.price = get_price(item)
 
     return beverages
+
+def get_by_id(id):
+    try:
+        return try_get_by_id(id)
+    except:
+        return None
+
+def try_get_by_id(id):
+    beverage = get_beverage_by_id(id)
+    beverage.price = get_price(beverage)
+
+    return beverage
+
+def get_beverage_by_id(id):
+    return models.Beverage.objects.get(id=id)
