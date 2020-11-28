@@ -168,3 +168,5 @@ class ModelsTests(TestCase):
         beverage = Beverage.get_by_id(1)
 
         self.assertEqual(beverage.name, "Suco de limão")
+        self.assertEqual(beverage.size, "1 litros")
+        self.assertEqual(beverage.price, 5)

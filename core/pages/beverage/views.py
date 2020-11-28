@@ -105,4 +105,27 @@ def edit(request,id):
 
 
 def edit_submit(request):
-    return None
+    if request.POST:
+        id = request.POST.get('id')
+        name = request.POST.get('name')
+        size = request.POST.get('size')
+        price = request.POST.get('price')
+
+        if name or size or price:
+            beverage = Beverage.update(id, name, size, price)
+
+            if beverage is None:
+                messages.error(request, "Erro ao atualizar a bebida")
+        else:
+            if price is None:
+                messages.error(request, "preço nao pode estar vazio")
+            if size is None:
+                messages.error(request, "Lista de tamanho vazia")
+            if name is None:
+                messages.error(request, "Nome nao pode estar vazio")
+
+        return redirect('/beverage/edit/{}'.format(id))
+    else:
+        messages.error(request, "Erro no rest")
+
+    return redirect('/beverage/list')
