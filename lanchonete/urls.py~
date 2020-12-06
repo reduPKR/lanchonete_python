@@ -40,8 +40,5 @@ urlpatterns = [
     path('beverage/filter/submit', beverage.filter_submit),
     path('beverage/edit/<int:id>', beverage.edit),
     path('beverage/edit/submit', beverage.edit_submit),
-
-    path('purchase/create', beverage.create),
-    path('purchase/create/submit', beverage.create_submit),
 ]
 

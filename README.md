@@ -52,13 +52,13 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 - [X] Tela para filtrar lanches  
 - [X] Tela para cadastrar lanches  
 - [X] Tela para atualizar lanches  
-- [ ] Testes templates  bebidas  
-- [ ] Testes para models bebidas  
+- [X] Testes templates  bebidas  
+- [X] Testes para models bebidas  
 - [X] Menu de bebidas  
 - [X] Tela para listar bebidas  
 - [X] Tela para filtrar bebidas  
 - [X] Tela para cadastrar  
-- [ ] Tela para atualizar bebidas  
+- [X] Tela para atualizar bebidas  
 - [ ] Testes templates  pedido  
 - [ ] Testes para models pedido  
 - [ ] Menu de pedido  
