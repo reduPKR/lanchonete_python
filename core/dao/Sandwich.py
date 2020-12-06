@@ -58,6 +58,10 @@ def sandwich_price(sandwich):
 
     return round(float(price) + (float(price)*percent), 2)
 
+def get_by_name(name):
+    sandwich = models.Sandwich.objects.get(name=name)
+    return get_by_id(sandwich.id)
+
 def get_by_id(id):
     try:
         return try_get_by_id(id)

@@ -1,10 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "model-page.html" %}
+
+{% block content %}
+    {% for message in messages %}
+        <span>* Erro: {{ message }}</span><br>
+    {% endfor %}
+    <div align="center">
+        <form action="submit" method="POST"> {% csrf_token %}
+            <div class="form-row">
+                <select class="form-control"  id="sandwich_id" value='{{ item.name }} - {{ item.price }}'>
+                    {% for item in sandwichs %}
+                        <option value='{{ item.name }} - {{ item.price }}'> {{ item.name }} - {{ item.price }}</option>
+                    {% endfor %}
+                </select>
+                <br><br>
+                <button type="button" class="btn btn-secondary" onclick="adicionar()" >Adicionar</button>
+            </div>
+            <br><br>
+            <input type="text" id="sandwich_list" name="sandwich_list" value="{{sandwich_list}}" hidden>
+            <button type="submit" class="btn btn-warning btn-block">
+                Finalizar
+            </button>
+        </form>
+        <br>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <ul id="sandwichs"></ul>
+            </div>
+        </div>
+    </div>
+
+<script>
+        var list_sandwich = [];
+
+        function adicionar() {
+            var lista = document.getElementById('sandwichs');
+            var sandwich = document.getElementById('sandwich_id').value;
+
+            var li = document.createElement('li');
+            li.innerHTML = sandwich;
+            lista.appendChild(li);
+
+            document.getElementById('sandwich_id').value='{sandwichs[0].name} - {sandwichs[0].price}';
+
+            //input dos ingredientes
+            var dados = (document.getElementsByName('sandwich_list').length > 0)?document.getElementsByName('sandwich_list')[0]:null;
+            console.log(dados)
+            if(list_sandwich.length == 0){
+                list_sandwich = list_sandwich.concat(dados.value)
+                list_sandwich.pop();
+            }
+
+            list_sandwich.push(sandwich)
+            dados.value = list_sandwich;
+        }
+
+    </script>
+{% endblock %}

@@ -10,7 +10,7 @@
     <a type="button" type="submit" class="btn btn-warning btn-block" href="/beverage/menu">
         <i class="fas fa-glass-martini"></i> Bebidas
     </a>
-    <a type="button" type="submit" class="btn btn-warning btn-block" href="/purchase/menu">
+    <a type="button" type="submit" class="btn btn-warning btn-block" href="#">
         <i class="fas fa-receipt"></i> Pedidos
     </a>
 {% endblock %}

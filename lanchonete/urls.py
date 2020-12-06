@@ -6,6 +6,7 @@ from core.pages.templates import views as template
 from core.pages.ingredient import views as ingredient
 from core.pages.sandwich import views as sandwich
 from core.pages.beverage import views as beverage
+from core.pages.purchase import views as purchase
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -41,7 +42,7 @@ urlpatterns = [
     path('beverage/edit/<int:id>', beverage.edit),
     path('beverage/edit/submit', beverage.edit_submit),
 
-    path('purchase/create', beverage.create),
-    path('purchase/create/submit', beverage.create_submit),
+    path('purchase/menu/', purchase.menu),
+    path('purchase/create/', purchase.create),
+    path('purchase/create/submit', purchase.create_submit),
 ]
-

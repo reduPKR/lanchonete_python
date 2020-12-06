@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "model-page.html" %}
+
+{% block content %}
+    <a type="button" type="submit" class="btn btn-warning btn-block" href="/purchase/create">
+        <i class="fas fa-plus-circle"></i> Novo pedido
+    </a>
+    <a type="button" type="submit" class="btn btn-warning btn-block" href="/purchase/list">
+        <i class="fas fa-list"></i> Listar pedidos
+    </a>
+{% endblock %}
