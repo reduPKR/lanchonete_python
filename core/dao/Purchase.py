@@ -3,7 +3,6 @@ import datetime
 
 from core.dao import Sandwich
 
-
 def create(list):
     try:
         return try_create(list)
@@ -35,3 +34,28 @@ def try_create(list):
         return purchase
     else:
         return None
+
+def get_all_open():
+    purchases = models.Purchase.objects.filter(open=True)
+
+    for item in purchases:
+        sandwichs = models.SandwichOrder.objects.filter(purchase=item)
+
+        price = 0
+
+        for sandwich in sandwichs:
+            price = price + Sandwich.sandwich_price(sandwich.sandwich)
+
+        item.price = round(price)
+
+    return purchases
+
+def close(id):
+    try:
+        return try_close(id)
+    except:
+        return None
+
+def try_close(id):
+    models.Purchase.objects.filter(id=id).update(open=False);
+    return True

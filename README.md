@@ -1,6 +1,7 @@
 ## Lanchonete Django
 Estava sem muito o que fazer, decidi criar um sistema para uma lanchonete.  
 O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anotar pedidos.  
+#### Projeto reduzido para não atrasar outros projetos
 
 ## Rotas
 #### Rota para paginas
@@ -61,10 +62,10 @@ O sitema permite registrar ingredientes, registrar bebidas, criar lanches e anot
 - [X] Tela para atualizar bebidas  
 - [ ] Testes templates  pedido  
 - [ ] Testes para models pedido  
-- [ ] Menu de pedido  
-- [ ] Realizar um pedido  
+- [X] Menu de pedido  
+- [X] Realizar um pedido  
 - [ ] Atualizar um pedido  
-- [ ] Finalizar um pedido     
+- [X] Finalizar um pedido     
 
 ## Banco de dados  
 #### Vi alguns erros no banco, deixar assim por enquanto

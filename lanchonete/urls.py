@@ -45,4 +45,6 @@ urlpatterns = [
     path('purchase/menu/', purchase.menu),
     path('purchase/create/', purchase.create),
     path('purchase/create/submit', purchase.create_submit),
+    path('purchase/list', purchase.list),
+    path('purchase/close/<int:id>', purchase.close),
 ]

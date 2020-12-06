@@ -38,3 +38,20 @@ def create_submit(request):
         messages.error(request,"Erro no rest")
 
     return redirect('/purchase/create')
+
+def list(request):
+    dados = {
+        'title': 'Novo pedido',
+        'header': 'Novo pedido',
+        'icon': 'fas fa-hamburger',
+        'purchases': Purchase.get_all_open()
+    }
+
+    return render(request, 'purchase/list.html', dados)
+
+
+def close(request, id):
+    if id != None:
+        Purchase.close(id)
+
+    return redirect('/purchase/list')
